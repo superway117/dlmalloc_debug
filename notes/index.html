@@ -1,0 +1,2222 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<base target="_top">
+<style type="text/css">
+  
+
+/* default css */
+
+table {
+  font-size: 1em;
+  line-height: inherit;
+  border-collapse: collapse;
+}
+
+
+tr {
+  
+  text-align: left;
+  
+}
+
+
+div, address, ol, ul, li, option, select {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+p {
+  margin: 0px;
+}
+
+
+pre {
+  font-family: Courier New;
+  white-space: pre-wrap;
+  margin:0;
+}
+
+body {
+  margin: 6px;
+  padding: 0px;
+  font-family: Verdana, sans-serif;
+  font-size: 10pt;
+  background-color: #ffffff;
+  color: #000;
+}
+
+
+img {
+  -moz-force-broken-image-icon: 1;
+}
+
+@media screen {
+  html.pageview {
+    background-color: #f3f3f3 !important;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  
+
+  body {
+    min-height: 1100px;
+    
+    counter-reset: __goog_page__;
+  }
+  
+  * html body {
+    height: 1100px;
+  }
+  /* Prevent repaint errors when scrolling in Safari. This "Star-7" css hack
+     targets Safari 3.1, but not WebKit nightlies and presumably Safari 4.
+     That's OK because this bug is fixed in WebKit nightlies/Safari 4 :-). */
+  html*#wys_frame::before {
+    content: '\A0';
+    position: fixed;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    top: 0;
+    left: 0;
+  }
+  
+  .pageview body {
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 2px solid #bbb;
+    border-bottom: 2px solid #bbb;
+    width: 648px !important;
+    margin: 15px auto 25px;
+    padding: 40px 50px;
+  }
+  /* IE6 */
+  * html {
+    overflow-y: scroll;
+  }
+  * html.pageview body {
+    overflow-x: auto;
+  }
+  
+
+  
+    
+    .writely-callout-data {
+      display: inline-block;
+      width: 0;
+      height: 0;
+      overflow: hidden;
+    }
+    
+
+    .writely-footnote-marker {
+      background-image: url('MISSING');
+      background-color: transparent;
+      background-repeat: no-repeat;
+      width: 7px;
+      overflow: hidden;
+      height: 16px;
+      vertical-align: top;
+
+      
+      -moz-user-select: none;
+    }
+    .editor .writely-footnote-marker {
+      cursor: move;
+    }
+    .writely-footnote-marker-highlight {
+      background-position: -15px 0;
+      -moz-user-select: text;
+    }
+    .writely-footnote-hide-selection ::-moz-selection, .writely-footnote-hide-selection::-moz-selection {
+      background: transparent;
+    }
+    .writely-footnote-hide-selection ::selection, .writely-footnote-hide-selection::selection {
+      background: transparent;
+    }
+    .writely-footnote-hide-selection {
+      cursor: move;
+    }
+
+    /* Comments */
+    .writely-comment-yellow {
+      background-color: #ffffd7;
+    }
+    .writely-comment-orange {
+      background-color: #ffe3c0;
+    }
+    .writely-comment-pink {
+      background-color: #ffd7ff;
+    }
+    .writely-comment-green {
+      background-color: #d7ffd7;
+    }
+    .writely-comment-blue {
+      background-color: #d7ffff;
+    }
+    .writely-comment-purple {
+      background-color: #eed7ff;
+    }
+
+  
+
+
+  
+  .br_fix span+br:not(:-moz-last-node) {
+    
+    position:relative;
+    
+    left: -1ex
+    
+  }
+
+  
+  #cb-p-tgt {
+    font-size: 8pt;
+    padding: .4em;
+    background-color: #ddd;
+    color: #333;
+  }
+  #cb-p-tgt-can {
+    text-decoration: underline;
+    color: #36c;
+    font-weight: bold;
+    margin-left: 2em;
+  }
+  #cb-p-tgt .spin {
+    width: 16px;
+    height: 16px;
+    background: url(//ssl.gstatic.com/docs/clipboard/spin_16o.gif) no-repeat;
+  }
+}
+
+h6 { font-size: 8pt }
+h5 { font-size: 8pt }
+h4 { font-size: 10pt }
+h3 { font-size: 12pt }
+h2 { font-size: 14pt }
+h1 { font-size: 18pt }
+
+blockquote {padding: 10px; border: 1px #DDD dashed }
+
+.webkit-indent-blockquote { border: none; }
+
+a img {border: 0}
+
+.pb {
+  border-width: 0;
+  page-break-after: always;
+  /* We don't want this to be resizeable, so enforce a width and height
+     using !important */
+  height: 1px !important;
+  width: 100% !important;
+}
+
+.editor .pb {
+  border-top: 1px dashed #C0C0C0;
+  border-bottom: 1px dashed #C0C0C0;
+}
+
+div.google_header, div.google_footer {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+
+/* Table of contents */
+.editor div.writely-toc {
+  background-color: #f3f3f3;
+  border: 1px solid #ccc;
+}
+.writely-toc > ol {
+  padding-left: 3em;
+  font-weight: bold;
+}
+ol.writely-toc-subheading {
+  padding-left: 1em;
+  font-weight: normal;
+}
+/* IE6 only */
+* html writely-toc ol {
+  list-style-position: inside;
+}
+.writely-toc-none {
+  list-style-type: none;
+}
+.writely-toc-decimal {
+  list-style-type: decimal;
+}
+.writely-toc-upper-alpha {
+  list-style-type: upper-alpha;
+}
+.writely-toc-lower-alpha {
+  list-style-type: lower-alpha;
+}
+.writely-toc-upper-roman {
+  list-style-type: upper-roman;
+}
+.writely-toc-lower-roman {
+  list-style-type: lower-roman;
+}
+.writely-toc-disc {
+  list-style-type: disc;
+}
+
+/* Ordered lists converted to numbered lists can preserve ordered types, and
+   vice versa. This is confusing, so disallow it */
+ul[type="i"], ul[type="I"], ul[type="1"], ul[type="a"], ul[type="A"] {
+  list-style-type: disc;
+}
+
+ol[type="disc"], ol[type="circle"], ol[type="square"] {
+  list-style-type: decimal;
+}
+
+/* end default css */
+
+
+  /* default print css */
+  @media print {
+    body {
+      padding: 0;
+      margin: 0;
+    }
+
+    div.google_header, div.google_footer {
+      display: block;
+      min-height: 0;
+      border: none;
+    }
+
+    div.google_header {
+      flow: static(header);
+    }
+
+    /* used to insert page numbers */
+    div.google_header::before, div.google_footer::before {
+      position: absolute;
+      top: 0;
+    }
+
+    div.google_footer {
+      flow: static(footer);
+    }
+
+    /* always consider this element at the start of the doc */
+    div#google_footer {
+      flow: static(footer, start);
+    }
+
+    span.google_pagenumber {
+      content: counter(page);
+    }
+
+    span.google_pagecount {
+      content: counter(pages);
+    }
+
+    .endnotes {
+      page: endnote;
+    }
+
+    /* MLA specifies that endnotes title should be 1" margin from the top of the page. */
+    @page endnote {
+      margin-top: 1in;
+    }
+
+    callout.google_footnote {
+      
+      display: prince-footnote;
+      footnote-style-position: inside;
+      /* These styles keep the footnote from taking on the style of the text
+         surrounding the footnote marker. They can be overridden in the
+         document CSS. */
+      color: #000;
+      font-family: Verdana;
+      font-size: 10.0pt;
+      font-weight: normal;
+    }
+
+    /* Table of contents */
+    #WritelyTableOfContents a::after {
+      content: leader('.') target-counter(attr(href), page);
+    }
+
+    #WritelyTableOfContents a {
+      text-decoration: none;
+      color: black;
+    }
+
+    /* Comments */
+    .writely-comment-yellow {
+      background-color: #ffffd7;
+    }
+    .writely-comment-orange {
+      background-color: #ffe3c0;
+    }
+    .writely-comment-pink {
+      background-color: #ffd7ff;
+    }
+    .writely-comment-green {
+      background-color: #d7ffd7;
+    }
+    .writely-comment-blue {
+      background-color: #d7ffff;
+    }
+    .writely-comment-purple {
+      background-color: #eed7ff;
+    }
+  }
+
+  @page {
+    @top {
+      content: flow(header);
+    }
+    @bottom {
+      content: flow(footer);
+    }
+    @footnotes {
+      border-top: solid black thin;
+      padding-top: 8pt;
+    }
+  }
+  /* end default print css */
+
+
+/* custom css */
+
+
+/* end custom css */
+
+/* ui edited css */
+
+body {
+  font-family: Verdana;
+  
+  font-size: 10.0pt;
+  line-height: normal;
+  background-color: #ffffff;
+}
+/* end ui edited css */
+
+
+/* editor CSS */
+.editor a:visited {color: #551A8B}
+.editor table.zeroBorder {border: 1px dotted gray}
+.editor table.zeroBorder td {border: 1px dotted gray}
+.editor table.zeroBorder th {border: 1px dotted gray}
+
+
+.editor div.google_header, .editor div.google_footer {
+  border: 2px #DDDDDD dashed;
+  position: static;
+  width: 100%;
+  min-height: 2em;
+}
+
+.editor .misspell {background-color: yellow}
+
+.editor .writely-comment {
+  font-size: 9pt;
+  line-height: 1.4;
+  padding: 1px;
+  border: 1px dashed #C0C0C0
+}
+
+
+/* end editor CSS */
+
+</style>
+
+  
+  <title>dlmalloc 阅读笔记</title>
+
+</head>
+
+<body 
+    
+    >
+    
+    
+    
+<font size=5><b>dlmalloc 阅读笔记</b></font>&nbsp;&nbsp; by Superway<br>
+<br>
+<a href=http://g.oswego.edu/dl/html/malloc.html id=s_tl title=dlmalloc>dlmalloc</a>是<a href=http://g.oswego.edu/dl/ id=t58t title="Doug Lea">Doug Lea</a>开发的一个memory allocator. dlmalloc已经被glibc,uboot 等著名的项目采用. 他在时间空间上面有很好的均衡，是一个相当牛逼的alloctor,不过代码确实忒难读了点.下面是dlmalloc对自己的评价:<br>
+&nbsp; This is not the fastest, most space-conserving, most portable, or<br>
+&nbsp; most tunable malloc ever written. However it is among the fastest<br>
+&nbsp; while also being among the most space-conserving, portable and<br>
+&nbsp; tunable.&nbsp; Consistent balance across these factors results in a good<br>
+&nbsp; general-purpose allocator for malloc-intensive programs.<br>
+下面的代码解析分几个部分:一.<a href=#%E7%AE%97%E6%B3%95%E6%A6%82%E8%BF%B0 id=f7de target=_self title=算法概述>算法概述</a>; 二.<a href=#%E4%BA%8C.%E6%8E%A5%E5%8F%A3%E4%BB%A5%E5%8F%8A%E9%85%8D%E7%BD%AE id=wqsk target=_self title=接口以及配置>接口以及配置</a>; 三.<a href=#%E4%B8%89.%E4%BB%A3%E7%A0%81%E8%A7%A3%E6%9E%90 id=kzll target=_self title=代码解析>代码解析</a>; 四.<a href=#%E5%9B%9B.%E4%BD%BF%E7%94%A8%E8%87%AA%E5%B8%A6%E7%9A%84DEBUG%E5%8A%9F%E8%83%BD id=yo:b target=_self title=使用自带的debug功能>使用自带的debug功能</a>; 五.<a href=#%E4%BA%94.%E5%A2%9E%E5%8A%A0FILE/LINE_debug%E5%8A%9F%E8%83%BD id=u541 target=_self title="增加file/line debug功能">增加file/line debug功能</a>.<br>
+<br>
+<b><font size=4>一. <a id=算法概述 name=算法概述></a>算法概述</font></b><br>
+dlmalloc管理2类的chunk: small bin and tree bin.<br>
+<b>small bin:</b><br>
+chunk size 小于256(包括the sizeof chunk header);<br>
+双向链表维护整个small bin list.<br>
+每个small chunk的头结构如下,其中fd(next),bk(previous)就是用来做双向链表的.<br>
+struct malloc_chunk {<br>
+&nbsp; size_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; prev_foot;&nbsp; /* Size of previous chunk (if free).&nbsp; */<br>
+&nbsp; size_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; head;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* Size and inuse bits. */<br>
+&nbsp; struct malloc_chunk* fd;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* double links -- used only if free. */<br>
+&nbsp; struct malloc_chunk* bk;<br>
+};<br>
+<br>
+<br>
+<div id=k85h style=TEXT-ALIGN:left>
+  <img src="images/ajdpnsgk6dr5_16ggvv4v3w_b.bmp" style="WIDTH:504px; HEIGHT:616px"><br>
+  <br>
+  基本的分配算法:<br>
+  If a small request (&lt; 256 bytes minus per-chunk overhead):<br>
+  1. If one exists, use a remainderless chunk in associated smallbin.(Remainderless means that there are too few excess bytes to represent as a chunk.)<br>
+  先用best-fit查找当前size适合的small bin或者下一个larger的small bin 列表,如果有,直接分配出去.<br>
+  2. If it is big enough, use the dv chunk, which is normally the chunk adjacent to the one used for the most recent small request.<br>
+  如果dv size够用,可以直接用dv chunk,如果剩下的size足够,多余的dv 仍然当做dv保存起来. dv是mstate直接维护的一个指针,没有放到small bin 或许tree bin里面去管理.<br>
+  3. If one exists, split the smallest available chunk in a bin,saving remainder in dv.<br>
+  查找符合条件的最小的small bin列表,如果找到，切割，一块当做内存分配出去，一块保存为dv(如果足够大).<br>
+  如果small bin没有满足条件的chunk,就去tree bin列表里面找.分配出来一块当内存用,另外一个保存为dv(如果足够大).<br>
+  4. If it is big enough, use the top chunk.<br>
+  查找top chunk是否满足条件,如果有,切割，剩余的部分仍然当做top保存.<br>
+  top也是mstate维护的一个指针,没有放到small bin 或许tree bin里面去管理,实际上如果还有top存在，表示这部分的内存从来没有用到过.<br>
+  5. If available, get memory from system and use it<br>
+  通过系统函数分配内存.<br>
+</div>
+<br>
+<b>tree bin:</b><br>
+chunk size 大于256(包括the sizeof chunk header);<br>
+一个树结构,相同范围内的chunk用双向链表维护.每一个tree都对应一个范围,比如第0个对应的是[256,384).<br>
+下图(来自<span style='FONT-FAMILY:"Times New Roman"'><font size=3>lenky0401的文档</font></span>)说明了整个tree bin的管理.<br>
+<br>
+<div id=cirm style=TEXT-ALIGN:left>
+  <div id=fum7 style=TEXT-ALIGN:left>
+    <img src="images/ajdpnsgk6dr5_19hq97jdfk_b.jpg" style="WIDTH:648px; HEIGHT:354.686px"><br>
+    <font size=2>mstate里面定义了 tbinptr treebins[NTREEBINS];也就是说最多有NTREEBINS(32)个trees.<br>
+    每个tree都有一个范围range,每个tree的范围也是不尽相同的.(表格来自</font><span style='FONT-FAMILY:"Times New Roman"'><font size=3><font size=2>lenky0401的文档). </font><br>
+    </font></span>
+    <table border=1 cellpadding=0 cellspacing=0 class=MsoTableTheme style="BORDER:medium none">
+      <tbody>
+      <tr>
+        <td style="BORDER:1pt solid windowtext; WIDTH:176.4pt" valign=top width=235>
+          <p class=MsoNormal>
+            <span style=FONT-FAMILY:宋体>字节范围</span>
+          </p>
+        </td>
+        <td style="BORDER-STYLE:solid solid solid none; BORDER-COLOR:windowtext windowtext windowtext -moz-use-text-color; BORDER-WIDTH:1pt 1pt 1pt medium; WIDTH:175.8pt" valign=top width=234>
+          <p class=MsoNormal>
+            <span style=FONT-FAMILY:宋体>范围大小</span>
+          </p>
+        </td>
+        <td style="BORDER-STYLE:solid solid solid none; BORDER-COLOR:windowtext windowtext windowtext -moz-use-text-color; BORDER-WIDTH:1pt 1pt 1pt medium; WIDTH:73.9pt" valign=top width=99>
+          <p class=MsoNormal>
+            <span style=FONT-FAMILY:宋体>箱号</span>
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="BORDER-STYLE:none solid solid; BORDER-COLOR:-moz-use-text-color windowtext windowtext; BORDER-WIDTH:medium 1pt 1pt; WIDTH:176.4pt" valign=top width=235>
+          <p class=MsoNormal>
+            [256, 384)
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:175.8pt" valign=top width=234>
+          <p class=MsoNormal>
+            128
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:73.9pt" valign=top width=99>
+          <p class=MsoNormal>
+            0
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="BORDER-STYLE:none solid solid; BORDER-COLOR:-moz-use-text-color windowtext windowtext; BORDER-WIDTH:medium 1pt 1pt; WIDTH:176.4pt" valign=top width=235>
+          <p class=MsoNormal>
+            [384, 512)
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:175.8pt" valign=top width=234>
+          <p class=MsoNormal>
+            128
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:73.9pt" valign=top width=99>
+          <p class=MsoNormal>
+            1
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="BORDER-STYLE:none solid solid; BORDER-COLOR:-moz-use-text-color windowtext windowtext; BORDER-WIDTH:medium 1pt 1pt; WIDTH:176.4pt" valign=top width=235>
+          <p class=MsoNormal>
+            [512, 768)
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:175.8pt" valign=top width=234>
+          <p class=MsoNormal>
+            256
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:73.9pt" valign=top width=99>
+          <p class=MsoNormal>
+            2
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="BORDER-STYLE:none solid solid; BORDER-COLOR:-moz-use-text-color windowtext windowtext; BORDER-WIDTH:medium 1pt 1pt; WIDTH:176.4pt" valign=top width=235>
+          <p class=MsoNormal>
+            [768, 1024)
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:175.8pt" valign=top width=234>
+          <p class=MsoNormal>
+            256
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:73.9pt" valign=top width=99>
+          <p class=MsoNormal>
+            3
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="BORDER-STYLE:none solid solid; BORDER-COLOR:-moz-use-text-color windowtext windowtext; BORDER-WIDTH:medium 1pt 1pt; WIDTH:176.4pt" valign=top width=235>
+          <p class=MsoNormal>
+            [1024, 1536)
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:175.8pt" valign=top width=234>
+          <p class=MsoNormal>
+            512
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:73.9pt" valign=top width=99>
+          <p class=MsoNormal>
+            4
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="BORDER-STYLE:none solid solid; BORDER-COLOR:-moz-use-text-color windowtext windowtext; BORDER-WIDTH:medium 1pt 1pt; WIDTH:176.4pt" valign=top width=235>
+          <p class=MsoNormal>
+            [1536, 2048)
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:175.8pt" valign=top width=234>
+          <p class=MsoNormal>
+            512
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:73.9pt" valign=top width=99>
+          <p class=MsoNormal>
+            5
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="BORDER-STYLE:none solid solid; BORDER-COLOR:-moz-use-text-color windowtext windowtext; BORDER-WIDTH:medium 1pt 1pt; WIDTH:176.4pt" valign=top width=235>
+          <p class=MsoNormal>
+            [2048, 3072)
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:175.8pt" valign=top width=234>
+          <p class=MsoNormal>
+            1024
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:73.9pt" valign=top width=99>
+          <p class=MsoNormal>
+            6
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="BORDER-STYLE:none solid solid; BORDER-COLOR:-moz-use-text-color windowtext windowtext; BORDER-WIDTH:medium 1pt 1pt; WIDTH:176.4pt" valign=top width=235>
+          <p class=MsoNormal>
+            [3072, 4096)
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:175.8pt" valign=top width=234>
+          <p class=MsoNormal>
+            1024
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:73.9pt" valign=top width=99>
+          <p class=MsoNormal>
+            7
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="BORDER-STYLE:none solid solid; BORDER-COLOR:-moz-use-text-color windowtext windowtext; BORDER-WIDTH:medium 1pt 1pt; WIDTH:176.4pt" valign=top width=235>
+          <p class=MsoNormal>
+            [4096, 6144)
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:175.8pt" valign=top width=234>
+          <p class=MsoNormal>
+            2048
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:73.9pt" valign=top width=99>
+          <p class=MsoNormal>
+            8
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="BORDER-STYLE:none solid solid; BORDER-COLOR:-moz-use-text-color windowtext windowtext; BORDER-WIDTH:medium 1pt 1pt; WIDTH:176.4pt" valign=top width=235>
+          <p class=MsoNormal>
+            [6144, 8192)
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:175.8pt" valign=top width=234>
+          <p class=MsoNormal>
+            2048
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:73.9pt" valign=top width=99>
+          <p class=MsoNormal>
+            9
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="BORDER-STYLE:none solid solid; BORDER-COLOR:-moz-use-text-color windowtext windowtext; BORDER-WIDTH:medium 1pt 1pt; WIDTH:176.4pt" valign=top width=235>
+          <p class=MsoNormal>
+            [8192, 12288)
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:175.8pt" valign=top width=234>
+          <p class=MsoNormal>
+            4096
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:73.9pt" valign=top width=99>
+          <p class=MsoNormal>
+            10
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="BORDER-STYLE:none solid solid; BORDER-COLOR:-moz-use-text-color windowtext windowtext; BORDER-WIDTH:medium 1pt 1pt; WIDTH:176.4pt" valign=top width=235>
+          <p class=MsoNormal>
+            [12288, 16384)
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:175.8pt" valign=top width=234>
+          <p class=MsoNormal>
+            4096
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:73.9pt" valign=top width=99>
+          <p class=MsoNormal>
+            11
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="BORDER-STYLE:none solid solid; BORDER-COLOR:-moz-use-text-color windowtext windowtext; BORDER-WIDTH:medium 1pt 1pt; WIDTH:176.4pt" valign=top width=235>
+          <p class=MsoNormal>
+            [16384, 24576)
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:175.8pt" valign=top width=234>
+          <p class=MsoNormal>
+            8192
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:73.9pt" valign=top width=99>
+          <p class=MsoNormal>
+            12
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="BORDER-STYLE:none solid solid; BORDER-COLOR:-moz-use-text-color windowtext windowtext; BORDER-WIDTH:medium 1pt 1pt; WIDTH:176.4pt" valign=top width=235>
+          <p class=MsoNormal>
+            [24576, 32768)
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:175.8pt" valign=top width=234>
+          <p class=MsoNormal>
+            8192
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:73.9pt" valign=top width=99>
+          <p class=MsoNormal>
+            13
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="BORDER-STYLE:none solid solid; BORDER-COLOR:-moz-use-text-color windowtext windowtext; BORDER-WIDTH:medium 1pt 1pt; WIDTH:176.4pt" valign=top width=235>
+          <p class=MsoNormal>
+            [32768, 49152)
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:175.8pt" valign=top width=234>
+          <p class=MsoNormal>
+            16384
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:73.9pt" valign=top width=99>
+          <p class=MsoNormal>
+            14
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="BORDER-STYLE:none solid solid; BORDER-COLOR:-moz-use-text-color windowtext windowtext; BORDER-WIDTH:medium 1pt 1pt; WIDTH:176.4pt" valign=top width=235>
+          <p class=MsoNormal>
+            [49152, 65536)
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:175.8pt" valign=top width=234>
+          <p class=MsoNormal>
+            16384
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:73.9pt" valign=top width=99>
+          <p class=MsoNormal>
+            15
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="BORDER-STYLE:none solid solid; BORDER-COLOR:-moz-use-text-color windowtext windowtext; BORDER-WIDTH:medium 1pt 1pt; WIDTH:176.4pt" valign=top width=235>
+          <p class=MsoNormal>
+            [65536, 98304)
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:175.8pt" valign=top width=234>
+          <p class=MsoNormal>
+            32768
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:73.9pt" valign=top width=99>
+          <p class=MsoNormal>
+            16
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="BORDER-STYLE:none solid solid; BORDER-COLOR:-moz-use-text-color windowtext windowtext; BORDER-WIDTH:medium 1pt 1pt; WIDTH:176.4pt" valign=top width=235>
+          <p class=MsoNormal>
+            [98304, 131072)
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:175.8pt" valign=top width=234>
+          <p class=MsoNormal>
+            32768
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:73.9pt" valign=top width=99>
+          <p class=MsoNormal>
+            17
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="BORDER-STYLE:none solid solid; BORDER-COLOR:-moz-use-text-color windowtext windowtext; BORDER-WIDTH:medium 1pt 1pt; WIDTH:176.4pt" valign=top width=235>
+          <p class=MsoNormal>
+            [131072, 196608)
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:175.8pt" valign=top width=234>
+          <p class=MsoNormal>
+            65536
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:73.9pt" valign=top width=99>
+          <p class=MsoNormal>
+            18
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="BORDER-STYLE:none solid solid; BORDER-COLOR:-moz-use-text-color windowtext windowtext; BORDER-WIDTH:medium 1pt 1pt; WIDTH:176.4pt" valign=top width=235>
+          <p class=MsoNormal>
+            [196608, 262144)
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:175.8pt" valign=top width=234>
+          <p class=MsoNormal>
+            65536
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:73.9pt" valign=top width=99>
+          <p class=MsoNormal>
+            19
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="BORDER-STYLE:none solid solid; BORDER-COLOR:-moz-use-text-color windowtext windowtext; BORDER-WIDTH:medium 1pt 1pt; WIDTH:176.4pt" valign=top width=235>
+          <p class=MsoNormal>
+            [262144, 393216)
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:175.8pt" valign=top width=234>
+          <p class=MsoNormal>
+            131072
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:73.9pt" valign=top width=99>
+          <p class=MsoNormal>
+            20
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="BORDER-STYLE:none solid solid; BORDER-COLOR:-moz-use-text-color windowtext windowtext; BORDER-WIDTH:medium 1pt 1pt; WIDTH:176.4pt" valign=top width=235>
+          <p class=MsoNormal>
+            [393216, 524288)
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:175.8pt" valign=top width=234>
+          <p class=MsoNormal>
+            131072
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:73.9pt" valign=top width=99>
+          <p class=MsoNormal>
+            21
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="BORDER-STYLE:none solid solid; BORDER-COLOR:-moz-use-text-color windowtext windowtext; BORDER-WIDTH:medium 1pt 1pt; WIDTH:176.4pt" valign=top width=235>
+          <p class=MsoNormal>
+            [524288, 786432)
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:175.8pt" valign=top width=234>
+          <p class=MsoNormal>
+            262144
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:73.9pt" valign=top width=99>
+          <p class=MsoNormal>
+            22
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="BORDER-STYLE:none solid solid; BORDER-COLOR:-moz-use-text-color windowtext windowtext; BORDER-WIDTH:medium 1pt 1pt; WIDTH:176.4pt" valign=top width=235>
+          <p class=MsoNormal>
+            [786432, 1048576)
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:175.8pt" valign=top width=234>
+          <p class=MsoNormal>
+            262144
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:73.9pt" valign=top width=99>
+          <p class=MsoNormal>
+            23
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="BORDER-STYLE:none solid solid; BORDER-COLOR:-moz-use-text-color windowtext windowtext; BORDER-WIDTH:medium 1pt 1pt; WIDTH:176.4pt" valign=top width=235>
+          <p class=MsoNormal>
+            [1048576, 1572864)
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:175.8pt" valign=top width=234>
+          <p class=MsoNormal>
+            524288
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:73.9pt" valign=top width=99>
+          <p class=MsoNormal>
+            24
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="BORDER-STYLE:none solid solid; BORDER-COLOR:-moz-use-text-color windowtext windowtext; BORDER-WIDTH:medium 1pt 1pt; WIDTH:176.4pt" valign=top width=235>
+          <p class=MsoNormal>
+            [1572864, 2097152)
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:175.8pt" valign=top width=234>
+          <p class=MsoNormal>
+            524288
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:73.9pt" valign=top width=99>
+          <p class=MsoNormal>
+            25
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="BORDER-STYLE:none solid solid; BORDER-COLOR:-moz-use-text-color windowtext windowtext; BORDER-WIDTH:medium 1pt 1pt; WIDTH:176.4pt" valign=top width=235>
+          <p class=MsoNormal>
+            [2097152, 3145728)
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:175.8pt" valign=top width=234>
+          <p class=MsoNormal>
+            1048576
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:73.9pt" valign=top width=99>
+          <p class=MsoNormal>
+            26
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="BORDER-STYLE:none solid solid; BORDER-COLOR:-moz-use-text-color windowtext windowtext; BORDER-WIDTH:medium 1pt 1pt; WIDTH:176.4pt" valign=top width=235>
+          <p class=MsoNormal>
+            [4194304, 4194304)
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:175.8pt" valign=top width=234>
+          <p class=MsoNormal>
+            1048576
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:73.9pt" valign=top width=99>
+          <p class=MsoNormal>
+            27
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="BORDER-STYLE:none solid solid; BORDER-COLOR:-moz-use-text-color windowtext windowtext; BORDER-WIDTH:medium 1pt 1pt; WIDTH:176.4pt" valign=top width=235>
+          <p class=MsoNormal>
+            [4194304, 6291456)
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:175.8pt" valign=top width=234>
+          <p class=MsoNormal>
+            2097152
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:73.9pt" valign=top width=99>
+          <p class=MsoNormal>
+            28
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="BORDER-STYLE:none solid solid; BORDER-COLOR:-moz-use-text-color windowtext windowtext; BORDER-WIDTH:medium 1pt 1pt; WIDTH:176.4pt" valign=top width=235>
+          <p class=MsoNormal>
+            [6291456, 8388608)
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:175.8pt" valign=top width=234>
+          <p class=MsoNormal>
+            2097152
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:73.9pt" valign=top width=99>
+          <p class=MsoNormal>
+            29
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="BORDER-STYLE:none solid solid; BORDER-COLOR:-moz-use-text-color windowtext windowtext; BORDER-WIDTH:medium 1pt 1pt; WIDTH:176.4pt" valign=top width=235>
+          <p class=MsoNormal>
+            [8388608, 12582912)
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:175.8pt" valign=top width=234>
+          <p class=MsoNormal>
+            4194304
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:73.9pt" valign=top width=99>
+          <p class=MsoNormal>
+            30
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="BORDER-STYLE:none solid solid; BORDER-COLOR:-moz-use-text-color windowtext windowtext; BORDER-WIDTH:medium 1pt 1pt; WIDTH:176.4pt" valign=top width=235>
+          <p class=MsoNormal>
+            [12582912, <span style=FONT-FAMILY:宋体>理论上无穷大</span>)
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:175.8pt" valign=top width=234>
+          <p class=MsoNormal>
+            <span style=FONT-FAMILY:宋体>理论上无穷大</span>
+          </p>
+        </td>
+        <td style="BORDER-STYLE:none solid solid none; BORDER-COLOR:-moz-use-text-color windowtext windowtext -moz-use-text-color; BORDER-WIDTH:medium 1pt 1pt medium; WIDTH:73.9pt" valign=top width=99>
+          <p class=MsoNormal>
+            31
+          </p>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <br>
+    <div id=g48q style=TEXT-ALIGN:left>
+      <br>
+      <a id=tree_traveser name=tree_traveser></a>下图是一个tree的结构,T是根节点,就是mstate里面维护的指针数组对应的某项.<br>
+      <span style=FONT-FAMILY:宋体>根节点</span>T的范围是[256,284),就是128个字节.用7个bits就可以表示全部的变化范围.<br>
+      <p class=MsoNormal>
+        <span style=FONT-FAMILY:宋体>根节点</span>T<span style=FONT-FAMILY:宋体>的左子树</span>T1 [256, 320)<span style=FONT-FAMILY:宋体>为：</span> [1 0000 0000&nbsp; 1 00xx xxxx]
+      </p>
+      <p class=MsoNormal>
+        <span style=FONT-FAMILY:宋体>根节点</span>T<span style=FONT-FAMILY:宋体>的右子树</span>T2 [320, 384)<span style=FONT-FAMILY:宋体>为：</span> [1 0<span style=COLOR:red>1</span>xx xxxx&nbsp; 1 0<span style=COLOR:red>1</span>xx xxxx].
+      </p>
+      <p class=MsoNormal>
+        也就是说对于需要分配的size,通过size的第6个bit就可以知道,我们应该去哪个子树去查找. 比如申请的size是288(10<span style=COLOR:#ff0000>0</span>10 0000),这样就需要到T1里面去找合适的bin.
+      </p>
+      <p class=MsoNormal>
+        以此类推,我们再看T3,T4:
+      </p>
+      <p class=MsoNormal>
+      </p>
+      <p class=MsoNormal>
+        T3<span style=FONT-FAMILY:宋体>管理</span>[256, 288)<span style=FONT-FAMILY:宋体>为：</span>[1 0000 0000&nbsp;&nbsp; 1 000x xxxx]
+      </p>
+      <p class=MsoNormal>
+        T4<span style=FONT-FAMILY:宋体>管理</span>[288, 320)<span style=FONT-FAMILY:宋体>为：</span>[1 00<span style=COLOR:red>1</span>0 0000&nbsp;&nbsp; 1 00<span style=COLOR:red>1</span>x xxxx]
+      </p>
+      <p class=MsoNormal>
+        也就是说通过第5个bit,我们可以判断出需要到哪个child里面去查找. 接着上面的例子,显然我们要去查找T4.
+      </p>
+      <p class=MsoNormal>
+        就把就是按照上面的逻辑去找一个相对合适的tree bin.<br>
+      </p>
+      <br>
+      <img src="images/ajdpnsgk6dr5_20hnqznfdz_b.bmp" style="WIDTH:443px; HEIGHT:328px">
+    </div>
+    <br>
+  </div>
+</div>
+每个treebin的头结构如下,其中fd,bk是用于管理双向链表的.前面4个字节是和smallbin一样的.<br>
+struct malloc_tree_chunk {<br>
+&nbsp; /* The first four fields must be compatible with malloc_chunk */<br>
+&nbsp; size_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; prev_foot;<br>
+&nbsp; size_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; head;<br>
+&nbsp; struct malloc_tree_chunk* fd;<br>
+&nbsp; struct malloc_tree_chunk* bk;<br>
+<br>
+&nbsp; struct malloc_tree_chunk* child[2];<br>
+&nbsp; struct malloc_tree_chunk* parent;<br>
+&nbsp; bindex_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; index;<br>
+}<br>
+基本的分配算法:<br>
+for a large request:<br>
+1. Find the smallest available binned chunk that fits, and use it if it is better fitting than dv chunk, splitting if necessary.<br>
+先到已经维护的各个tree里面去找一个fit的bin,然后去和dv size比较,看谁是best fit.<br>
+2. If better fitting than any binned chunk, use the dv chunk.<br>
+查找dv chunk是否满足条件,如果有,切割，剩余的部分仍然当做dv保存.<br>
+3. If it is big enough, use the top chunk.<br>
+查找top chunk是否满足条件,如果有,切割，剩余的部分仍然当做top保存.<br>
+4. If request size &gt;= mmap threshold, try to directly mmap this chunk.<br>
+5. If available, get memory from system and use it<br>
+<br>
+<font size=4><b><a id=二.接口以及配置 name=二.接口以及配置></a>二.接口以及配置</b></font><br>
+为了方便描述,我们用mspace/mstate来表示dlmalloc用来维护heap的变量.<br>
+<br>
+dlmalloc的接口分为2套,算法都是一样的：<br>
+1.dlmalloc/dlfree/dlcalloc/dlrealloc...<br>
+2.create_mspace/create_mspace_with_base/mspace_malloc/mspace_free/mspace_realloc/mspace_calloc...<br>
+区别在于第一套接口定义了一个静态变量_gm_(static struct malloc_state _gm_)来维护整个heap,使用的heap也是dlmalloc来分配的。<br>
+第2套接口的所有函数第一个参数都是一个mspace msp,也就是说是caller来保存mspace。<br>
+因为我主要是要用到第2套接口,所以主要介绍第2套接口的使用.<br>
+<br>
+大致的使用分如下步骤:<br>
+1.创建mspace<br>
+使用create_mspace/create_mspace_with_base创建mspace,可以看成是dlmalloc初始化的函数.<br>
+mspace create_mspace(size_t capacity, int locked);&nbsp; //内存是dlmalloc内部分配的;locked 表示是否使用mutex(或者类似的机制)来确保thread-safety(前提是已经定义了宏USE_LOCKS).<br>
+mspace create_mspace_with_base(void* base, size_t capacity, int locked);//内存是caller分配好,扔给dlmalloc来管理的<br>
+2.使用内存<br>
+分配内存用mspace_malloc/mspace_calloc/mspace_realloc<br>
+释放内存用mspace_free.<br>
+3.释放整个heap<br>
+size_t destroy_mspace(mspace msp);<br>
+<br>
+首先说明下,dlmalloc里面假设size_t是unsigned int类型,port的时候要确保这个成立;<br>
+下面是dlmalloc配置的macro及其含义:<br>
+以下的配置,如果是声明了强制要声明的,最好是都统一定义到一个config.h里面,这样可以尽量少修改源文件.<br>
+<br>
+<span style=COLOR:#0000ff>WIN32</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; default: defined if _WIN32 defined<br>
+如果定义了_WIN32,那么这个宏就默认打开,否则默认的系统是unix.<br>
+是否定义了这个宏,主要是2个方面:<br>
+1.lock锁函数<br>
+<span style="BACKGROUND-COLOR:#ffffff; COLOR:#000000">看文档应该是USE_LOCKS定义为大于1的数,就可以定义自己的lock相关的函数,但是看代码感觉有点奇怪.<br>
+可以直接把lock相关的函数全部注释掉.然后实现自己的一套就ok.<br>
+</span>2.mmap<br>
+没有用到,HAVE_MMAP定义为0就没关系了.<br>
+port:<br>
+1.lock部分注释掉<br>
+2.HAVE_MMAP定义为0,那部分和win32相关的就无所谓了.<br>
+&nbsp;<br>
+<br style=COLOR:#ff0000>
+<span style=COLOR:#0000ff>MALLOC_ALIGNMENT</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; default: (size_t)8<br>
+分配出来的内存最小的alignment.至少是8,必须是2的n次方.<br>
+需要强制定义.<br>
+port:<br>
+定义为8是比较合适的，这样可以省空间.port的时候需要特别注意这个宏.<br>
+<br>
+<br>
+<span style=COLOR:#0000ff>MSPACES&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; default: 0 (false)<br>
+这个宏主要是给没有定义ONLY_MSPACES的情况下,允许使用mspace_malloc和dlmalloc的情况.<br>
+&nbsp; If true, compile in support for independent allocation spaces.<br>
+&nbsp; This is only supported if HAVE_MMAP is true.<br>
+如果定义了ONLY_MSPACES,这个宏也是强制定义的.但是实际意义不大.<br>
+port:<br>
+ignore.不需要强制定义<br>
+<br>
+<span style=COLOR:#0000ff>ONLY_MSPACES&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; default: 0 (false)<br>
+定义为1,表示只使用 mspace versions。<br>
+port:<br>
+强制定义为1.<br>
+<br>
+<span style="BACKGROUND-COLOR:#ffffff; COLOR:#0000ff">USE_LOCKS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; default: 0 (false)<br>
+<span style=COLOR:#000000>用来保证thread safety的锁机制,主要利用mutex的lock/unlock,一些public的函数will be </span></span>surrounded with mutex lock/unlock<br>
+<span style="BACKGROUND-COLOR:#ffffff; COLOR:#000000">USE_LOCKS==0/1是给win32或者或者支持</span>pthread用的。<br>
+<span style="BACKGROUND-COLOR:#ffffff; COLOR:#0000ff"><span style=COLOR:#000000>如果要定义自己的锁函数,定义</span></span><span style="BACKGROUND-COLOR:#ffffff; COLOR:#000000">USE_LOCKS为一个大于1的数(2),这个时候需要重新定义如下的宏:<br>
+</span>INITIAL_LOCK(sl)<br>
+ACQUIRE_LOCK(sl)<br>
+RELEASE_LOCK(sl)<br>
+TRY_LOCK(sl) //没用到，可以不管它<br>
+malloc_global_mutex 这是一个全局的mutex，init_mparams的时候会用到,根据实际情况，可以不用它。<br>
+port:<br>
+注释掉源代码的lock函数,加上需要port的平台的相关函数.<br>
+需要强制定义为1. 定义为2,没试.<br>
+<br>
+<br>
+<span style=COLOR:#0000ff>USE_SPIN_LOCKS&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; default: 1 iff USE_LOCKS and on x86 using gcc or MSC<br>
+为gcc msc用的,不需要.<br>
+port:<br>
+不需要强制定义,它依赖于SPIN_LOCKS_AVAILABLE的定义,确定SPIN_LOCKS_AVAILABLE==0就可以.<br>
+<br>
+<span style=COLOR:#0000ff>FOOTERS&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; default: 0<br>
+如果定义为1,foot可以用来做错误检测.但是会增加一些空间和时间的开销.<br>
+port:<br>
+需要强制定义为1.<br>
+<br>
+<br>
+<span style=COLOR:#0000ff>INSECURE&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; default: 0<br>
+如果定义为0,可以用来做一些安全检测,checks for usage errors and heap space overwrites.如果是0,会有时间上面的一些消耗.<br>
+port:<br>
+根据实际情况选择定义为0还是1.<br>
+<br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>USE_DL_PREFIX</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; default: NOT defined<br>
+给非mspace的接口加一个dl的前缀<br>
+port:<br>
+默认没定义,可以不管.<br>
+<br>
+<span style=COLOR:#0000ff>ABORT</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; default: defined as abort()<br>
+一些错误检测和assert会调用到这个宏.<br>
+&nbsp; Defines how to abort on failed checks.&nbsp; On most systems, a failed<br>
+&nbsp; check cannot die with an "assert" or even print an informative<br>
+&nbsp; message, because the underlying print routines in turn call malloc,<br>
+&nbsp; which will fail again.&nbsp; Generally, the best policy is to simply call<br>
+&nbsp; abort(). It's not very useful to do more than this because many<br>
+&nbsp; errors due to overwriting will show up as address faults (null, odd<br>
+&nbsp; addresses etc) rather than malloc-triggered checks, so will also<br>
+&nbsp; abort.&nbsp; Also, most compilers know that abort() does not return, so<br>
+&nbsp; can better optimize code conditionally calling it.<br>
+port:<br>
+强制定义: #define ABORT&nbsp; exit(0)//abort()<br>
+<br>
+<span style=COLOR:#0000ff>PROCEED_ON_ERROR</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; default: defined as 0 (false)<br>
+这个宏用来定义一些错误处理的函数(宏).主要是2个宏:<br>
+1.CORRUPTION_ERROR_ACTION<br>
+2.USAGE_ERROR_ACTION<br>
+如果定义了PROCEED_ON_ERROR==1,那么CORRUPTION_ERROR_ACTION会把整个heap reset一下.<br>
+比较稳妥的做法是定义PROCEED_ON_ERROR==0,然后根据实际的需求重新定义CORRUPTION_ERROR_ACTION和USAGE_ERROR_ACTION.<br>
+port:<br>
+强制定义PROCEED_ON_ERROR==0,然后强制定义CORRUPTION_ERROR_ACTION and USAGE_ERROR_ACTION<br>
+<br>
+<br>
+<span style=COLOR:#0000ff>DEBUG&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; default: NOT defined<br>
+这个feature主要目的是“trying to modify this code or diagnose problems when porting to new platforms.”<br>
+它会影响一些效率.<br>
+port:<br>
+一般默认不要去定义,如果出现问题了,打开这个宏去做调试;特别是porting 或者修改dlmalloc本身, 打开这个宏特别有用.<br>
+<br>
+<br>
+<span style=COLOR:#0000ff>ABORT_ON_ASSERT_FAILURE</span>&nbsp;&nbsp; default: defined as 1 (true)<br>
+这个宏是用来定义DEBUG状态下assert函数.默认是1.<br>
+#if ABORT_ON_ASSERT_FAILURE<br>
+#undef assert<br>
+#define assert(x) if(!(x)) ABORT<br>
+#else /* ABORT_ON_ASSERT_FAILURE */<br>
+#include &lt;assert.h&gt;<br>
+#endif /* ABORT_ON_ASSERT_FAILURE */<br>
+port:<br>
+默认是1,不需要强制定义.<br>
+<br>
+<br>
+<span style=COLOR:#0000ff>MALLOC_FAILURE_ACTION</span>&nbsp;&nbsp;&nbsp;&nbsp; default: sets errno to ENOMEM, or no-op on win32<br>
+&nbsp; The action to take before "return 0" when malloc fails to be able to<br>
+&nbsp; return memory because there is none available.<br>
+定义了分配内存失败的情况所做的操作.<br>
+port:<br>
+如果需要caller来控制,内存分配失败的情况,还是强制定义为空好: #define MALLOC_FAILURE_ACTION<br>
+<br>
+<span style=COLOR:#0000ff>HAVE_MORECORE&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; default: 1 (true) unless win32 or ONLY_MSPACES<br>
+&nbsp; True if this system supports sbrk or an emulation of it.<br>
+port:<br>
+因为如果定义WIN32,这个宏是默认为1的,所以在源代码里面, 我注释了相关的部分.大概line 502 - 544.<br>
+因为定义了ONLY_MSPACES,所以config里面可以不用强制定义这个宏为0<br>
+<br>
+<span style=COLOR:#0000ff>MORECORE&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; default: sbrk<br>
+&nbsp; The name of the sbrk-style system routine to call to obtain more<br>
+&nbsp; memory.&nbsp; See below for guidance on writing custom MORECORE<br>
+&nbsp; functions. The type of the argument to sbrk/MORECORE varies across<br>
+&nbsp; systems.&nbsp; It cannot be size_t, because it supports negative<br>
+&nbsp; arguments, so it is normally the signed type of the same width as<br>
+&nbsp; size_t (sometimes declared as "intptr_t").&nbsp; It doesn't much matter<br>
+&nbsp; though. Internally, we only call it with arguments less than half<br>
+&nbsp; the max value of a size_t, which should work across all reasonable<br>
+&nbsp; possibilities, although sometimes generating compiler warnings.<br>
+port:<br>
+ignore.<br>
+<br>
+<span style=COLOR:#0000ff>MORECORE_CONTIGUOUS</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; default: 1 (true) if HAVE_MORECORE<br>
+&nbsp; If true, take advantage of fact that consecutive calls to MORECORE<br>
+&nbsp; with positive arguments always return contiguous increasing<br>
+&nbsp; addresses.&nbsp; This is true of unix sbrk. It does not hurt too much to<br>
+&nbsp; set it true anyway, since malloc copes with non-contiguities.<br>
+&nbsp; Setting it false when definitely non-contiguous saves time<br>
+&nbsp; and possibly wasted space it would take to discover this though.<br>
+port:<br>
+ignore.<br>
+<br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>MORECORE_CANNOT_TRIM</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; default: NOT defined<br>
+&nbsp; True if MORECORE cannot release space back to the system when given<br>
+&nbsp; negative arguments. This is generally necessary only if you are<br>
+&nbsp; using a hand-crafted MORECORE function that cannot handle negative<br>
+&nbsp; arguments.<br>
+<div style=TEXT-ALIGN:left>
+  不能release space back to 系统,这个宏就要定义,默认是没有定义的<br>
+</div>
+port:<br>
+强制定义这个宏.<br>
+<br>
+<span style=COLOR:#0000ff>NO_SEGMENT_TRAVERSAL</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; default: 0<br>
+&nbsp; If non-zero, suppresses traversals of memory segments<br>
+&nbsp; returned by either MORECORE or CALL_MMAP. This disables<br>
+&nbsp; merging of segments that are contiguous, and selectively<br>
+&nbsp; releasing them to the OS if unused, but bounds execution times.<br>
+free一个large chunk的时候,回去检测是否要回收segment,如果这个segment没有used chunk.<br>
+port:<br>
+默认是0,ignore.如果不需要回收的功能,可以考虑把release_unused_segments函数置空.<br>
+<br>
+<span style=COLOR:#0000ff>HAVE_MMAP</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; default: 1 (true)<br>
+&nbsp; True if this system supports mmap or an emulation of it.&nbsp; If so, and<br>
+&nbsp; HAVE_MORECORE is not true, MMAP is used for all system<br>
+&nbsp; allocation. If set and HAVE_MORECORE is true as well, MMAP is<br>
+&nbsp; primarily used to directly allocate very large blocks. It is also<br>
+&nbsp; used as a backup strategy in cases where MORECORE fails to provide<br>
+&nbsp; space from system. Note: A single call to MUNMAP is assumed to be<br>
+&nbsp; able to unmap memory that may have be allocated using multiple calls<br>
+&nbsp; to MMAP, so long as they are adjacent.<br>
+port:<br>
+强制定义为0.<br>
+<br>
+<span style=COLOR:#0000ff>HAVE_MREMAP&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; default: 1 on linux, else 0<br>
+&nbsp; If true realloc() uses mremap() to re-allocate large blocks and<br>
+&nbsp; extend or shrink allocation spaces.<br>
+port:<br>
+如果定了linux,=1，否则为0;所以 可以ignore.<br>
+<br>
+<span style=COLOR:#0000ff>MMAP_CLEARS&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; default: 1 except on WINCE.<br>
+&nbsp; True if mmap clears memory so calloc doesn't need to. This is true<br>
+&nbsp; for standard unix mmap using /dev/zero and on WIN32 except for WINCE.<br>
+port:<br>
+ignore<br>
+<br>
+<span style=COLOR:#0000ff>USE_BUILTIN_FFS&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; default: 0 (i.e., not used)<br>
+&nbsp; Causes malloc to use the builtin ffs() function to compute indices.<br>
+&nbsp; Some compilers may recognize and intrinsify ffs to be faster than the<br>
+&nbsp; supplied C version. Also, the case of x86 using gcc is special-cased<br>
+&nbsp; to an asm instruction, so is already as fast as it can be, and so<br>
+&nbsp; this setting has no effect. Similarly for Win32 under recent MS compilers.<br>
+&nbsp; (On most x86s, the asm version is only slightly faster than the C version.)<br>
+port:<br>
+默认是0;ignore<br>
+<br>
+<span style=COLOR:#0000ff>malloc_getpagesize&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; default: derive from system includes, or 4096.<br>
+&nbsp; The system page size. To the extent possible, this malloc manages<br>
+&nbsp; memory from the system in page-size units.&nbsp; This may be (and<br>
+&nbsp; usually is) a function rather than a constant. This is ignored<br>
+&nbsp; if WIN32, where page size is determined using getSystemInfo during<br>
+&nbsp; initialization.<br>
+port:<br>
+强制定义为4096<br>
+<br>
+<span style=COLOR:#0000ff>USE_DEV_RANDOM</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; default: 0 (i.e., not used)<br>
+&nbsp; Causes malloc to use /dev/random to initialize secure magic seed for<br>
+&nbsp; stamping footers. Otherwise, the current time is used.<br>
+用/dev/random 生成magic number的方式.<br>
+port:<br>
+默认是0;ignore<br>
+<br>
+<span style=COLOR:#0000ff>NO_MALLINFO&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; default: 0<br>
+&nbsp; If defined, don't compile "mallinfo". This can be a simple way<br>
+&nbsp; of dealing with mismatches between system declarations and<br>
+&nbsp; those in this file.<br>
+这个用来做一些统计的feature,主要是函数mspace_mallinfo,会遍历所有的segment,做一些统计工作.<br>
+port:<br>
+默认是0,ignore;(0表示有这个feature)<br>
+<br>
+<span style=COLOR:#0000ff>MALLINFO_FIELD_TYPE&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; default: size_t<br>
+&nbsp; The type of the fields in the mallinfo struct. This was originally<br>
+&nbsp; defined as "int" in SVID etc, but is more usefully defined as<br>
+&nbsp; size_t. The value is used only if&nbsp; HAVE_USR_INCLUDE_MALLOC_H is not set<br>
+这个是定义了mallinfo struct里面统计数据的类型,默认是size_t<br>
+port:<br>
+最好强制定义为UINT32.<br>
+<br>
+<span style=COLOR:#0000ff>REALLOC_ZERO_BYTES_FREES&nbsp;</span>&nbsp;&nbsp; default: not defined<br>
+&nbsp; This should be set if a call to realloc with zero bytes should<br>
+&nbsp; be the same as a call to free. Some people think it should. Otherwise,<br>
+&nbsp; since this malloc returns a unique pointer for malloc(0), so does<br>
+&nbsp; realloc(p, 0).<br>
+这个主要定义了realloc传入size是0的情况的处理, 如果定义了这个宏,那么就会去释放原来的那个ram。<br>
+port:<br>
+默认是not defined;ignore<br>
+<br>
+<span style=COLOR:#0000ff>LACKS_UNISTD_H, LACKS_FCNTL_H, LACKS_SYS_PARAM_H, LACKS_SYS_MMAN_H</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>LACKS_STRINGS_H, LACKS_STRING_H, LACKS_SYS_TYPES_H,&nbsp; LACKS_ERRNO_H</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>LACKS_STDLIB_H&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; default: NOT defined unless on WIN32<br>
+&nbsp; Define these if your system does not have these header files.<br>
+&nbsp; You might need to manually insert some of the declarations they provide.<br>
+这几个主要是给为win32的<br>
+port:<br>
+<span style=COLOR:#000000>前面HAVE_MORECORE的操作里面已经一并把这几个宏的定义给注释掉了.<br>
+在这里就可以不管了.<br>
+</span><br>
+<span style=COLOR:#0000ff>DEFAULT_GRANULARITY</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; default: page size if MORECORE_CONTIGUOUS,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; system_info.dwAllocationGranularity in WIN32,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; otherwise 64K.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Also settable using mallopt(M_GRANULARITY, x)<br>
+&nbsp; The unit for allocating and deallocating memory from the system.&nbsp; On<br>
+&nbsp; most systems with contiguous MORECORE, there is no reason to<br>
+&nbsp; make this more than a page. However, systems with MMAP tend to<br>
+&nbsp; either require or encourage larger granularities.&nbsp; You can increase<br>
+&nbsp; this value to prevent system allocation functions to be called so<br>
+&nbsp; often, especially if they are slow.&nbsp; The value must be at least one<br>
+&nbsp; page and must be a power of two.&nbsp; Setting to 0 causes initialization<br>
+&nbsp; to either page size or win32 region size.&nbsp; (Note: In previous<br>
+&nbsp; versions of malloc, the equivalent of this option was called<br>
+&nbsp; "TOP_PAD")<br>
+默认的从系统分配内存的最小值.比如当heap用完了，要从系统里面去alloc内存,这个值就是一个最小的size.<br>
+因为port的时候,内存是固定的,没有重新从系统分配内存的情况,所以这个值无所谓,<br>
+port:<br>
+因为不支持alloc from system,这个可以强制定义为0<br>
+<br>
+<br>
+<span style=COLOR:#0000ff>DEFAULT_TRIM_THRESHOLD</span>&nbsp;&nbsp;&nbsp; default: 2MB<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Also settable using mallopt(M_TRIM_THRESHOLD, x)<br>
+&nbsp; The maximum amount of unused top-most memory to keep before<br>
+&nbsp; releasing via malloc_trim in free().&nbsp; Automatic trimming is mainly<br>
+&nbsp; useful in long-lived programs using contiguous MORECORE.&nbsp; Because<br>
+&nbsp; trimming via sbrk can be slow on some systems, and can sometimes be<br>
+&nbsp; wasteful (in cases where programs immediately afterward allocate<br>
+&nbsp; more large chunks) the value should be high enough so that your<br>
+&nbsp; overall system performance would improve by releasing this much<br>
+&nbsp; memory.&nbsp; As a rough guide, you might set to a value close to the<br>
+&nbsp; average size of a process (program) running on your system.<br>
+&nbsp; Releasing this much memory would allow such a process to run in<br>
+&nbsp; memory.&nbsp; Generally, it is worth tuning trim thresholds when a<br>
+&nbsp; program undergoes phases where several large chunks are allocated<br>
+&nbsp; and released in ways that can reuse each other's storage, perhaps<br>
+&nbsp; mixed with phases where there are no such chunks at all. The trim<br>
+&nbsp; value must be greater than page size to have any useful effect.&nbsp; To<br>
+&nbsp; disable trimming completely, you can set to MAX_SIZE_T. Note that the trick<br>
+&nbsp; some people use of mallocing a huge space and then freeing it at<br>
+&nbsp; program startup, in an attempt to reserve system memory, doesn't<br>
+&nbsp; have the intended effect under automatic trimming, since that memory<br>
+&nbsp; will immediately be returned to the system.<br>
+定义了一个大小,来判断是否要realse ram给系统.<br>
+port:<br>
+因为不支持alloc from system,而且没有定义MORECORE_CANNOT_TRIM,所以这个基本没用上,可以ignore<br>
+<br>
+<span style=COLOR:#0000ff>DEFAULT_MMAP_THRESHOLD</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; default: 256K<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Also settable using mallopt(M_MMAP_THRESHOLD, x)<br>
+&nbsp; The request size threshold for using MMAP to directly service a<br>
+&nbsp; request. Requests of at least this size that cannot be allocated<br>
+&nbsp; using already-existing space will be serviced via mmap.&nbsp; (If enough<br>
+&nbsp; normal freed space already exists it is used instead.)&nbsp; Using mmap<br>
+&nbsp; segregates relatively large chunks of memory so that they can be<br>
+&nbsp; individually obtained and released from the host system. A request<br>
+&nbsp; serviced through mmap is never reused by any other request (at least<br>
+&nbsp; not directly; the system may just so happen to remap successive<br>
+&nbsp; requests to the same locations).&nbsp; Segregating space in this way has<br>
+&nbsp; the benefits that: Mmapped space can always be individually released<br>
+&nbsp; back to the system, which helps keep the system level memory demands<br>
+&nbsp; of a long-lived program low.&nbsp; Also, mapped memory doesn't become<br>
+&nbsp; `locked' between other chunks, as can happen with normally allocated<br>
+&nbsp; chunks, which means that even trimming via malloc_trim would not<br>
+&nbsp; release them.&nbsp; However, it has the disadvantage that the space<br>
+&nbsp; cannot be reclaimed, consolidated, and then used to service later<br>
+&nbsp; requests, as happens with normal chunks.&nbsp; The advantages of mmap<br>
+&nbsp; nearly always outweigh disadvantages for "large" chunks, but the<br>
+&nbsp; value of "large" may vary across systems.&nbsp; The default is an<br>
+&nbsp; empirically derived value that works well in most systems. You can<br>
+&nbsp; disable mmap by setting to MAX_SIZE_T.<br>
+port:<br>
+因为已经定义了MORECORE_CANNOT_TRIM,这个宏可以ignore.<br>
+<br>
+<span style=COLOR:#0000ff>MAX_RELEASE_CHECK_RATE</span>&nbsp;&nbsp; default: 4095 unless not HAVE_MMAP<br>
+&nbsp; The number of consolidated frees between checks to release<br>
+&nbsp; unused segments when freeing. When using non-contiguous segments,<br>
+&nbsp; especially with multiple mspaces, checking only for topmost space<br>
+&nbsp; doesn't always suffice to trigger trimming. To compensate for this,<br>
+&nbsp; free() will, with a period of MAX_RELEASE_CHECK_RATE (or the<br>
+&nbsp; current number of segments, if greater) try to release unused<br>
+&nbsp; segments to the OS when freeing chunks that result in<br>
+&nbsp; consolidation. The best value for this parameter is a compromise<br>
+&nbsp; between slowing down frees with relatively costly checks that<br>
+&nbsp; rarely trigger versus holding on to unused memory. To effectively<br>
+&nbsp; disable, set to MAX_SIZE_T. This may lead to a very slight speed<br>
+&nbsp; improvement at the expense of carrying around more memory.<br>
+port:<br>
+不能release给系统,ignore,使用默认的设置.<br>
+<br>
+<b><font size=4><a id=三.代码解析 name=三.代码解析></a>三.代码解析</font></b><br>
+<font size=3>1.</font><font size=3><b>create_mspace_with_base</b></font><br>
+//base: 传进来的heap(通常是一个数组);capacity: heap size;locked:是否使用mutex或者类似的机制来保证thread-safety,前提是已经定义了宏USE_LOCKS.<br>
+<span style=COLOR:#0000ff>mspace create_mspace_with_base(void* base, size_t capacity, int locked) {</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp; mstate m = 0;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp; size_t msize;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp; ensure_initialization();</span><span style=COLOR:#ff0000>//判读是否初始化,如果没有,初始化; 是否初始化的判断:mparams.magic != 0 </span><br>
+&nbsp; <span style=COLOR:#ff0000>//得到malloc_state按MALLOC_ALIGNMENT(默认是8)对其的size,比如sizeof(struct malloc_state)==54,那么align后msize变成56,如果MALLOC_ALIGNMENT是8的话.</span><br>
+&nbsp;<span style=COLOR:#0000ff> msize = pad_request(sizeof(struct malloc_state));</span><br>
+<span style=COLOR:#ff0000>/*capacity合法性判断</span><br style=COLOR:#ff0000>
+<span style=COLOR:#ff0000>TOP_FOOT_SIZE是padding在一个segment的结尾,用作连接下一个segment,也就是说dlmalloc可以用来同时管理多个segment,每个segment的最后一段用来连接下一个segment.</span><br style=COLOR:#ff0000>
+<span style=COLOR:#ff0000>mparams.page_size是一个页的大小,可能windows上面通常都是4096(不确定).我们这里用不上,不妨强制定义为4096.</span><br style=COLOR:#ff0000>
+<span style=COLOR:#ff0000>一个正数加符号强制转成unsigned int,相当于MAX(int的最大值)+1-原数,抛开mparams.page_size,下面的条件的后半段相当于:</span><br style=COLOR:#ff0000>
+<span style=COLOR:#ff0000>capacity +msize + TOP_FOOT_SIZE + mparams.page_size &lt; MAX+1,也就是capacity +msize + TOP_FOOT_SIZE &lt; = MAX.</span><br style=COLOR:#ff0000>
+<span style=COLOR:#ff0000>*/</span><br>
+&nbsp;<span style=COLOR:#0000ff> if (capacity &gt; msize + TOP_FOOT_SIZE &amp;&amp;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; capacity &lt; (size_t) -(msize + TOP_FOOT_SIZE + mparams.page_size)) {<br>
+</span><span style=COLOR:#ff0000>//生成mstate,实际上dlmalloc是用heap的开头一段当做mstate<br>
+//m-&gt;magic = mparams.magic;用于后面分配的安全检测</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; m = init_user_mstate((char*)base, capacity);<br>
+</span><span style=COLOR:#ff0000>//EXTERN_BIT表示这个heap是外部传进来的heap,主要是释放整个heap的时候做判断用.</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; m-&gt;seg.sflags = EXTERN_BIT;<br>
+</span><span style=COLOR:#ff0000>//设置这个heap(mstate )是否是thread safety,mstate里面用mflags的其中一位来表示是否use lock。</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; set_lock(m, locked);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp; }</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp; return (mspace)m;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>}</span><br>
+<br>
+<b><font size=3>2.mspace_malloc</font></b><br>
+<span style=COLOR:#0000ff>void* mspace_malloc(mspace msp, size_t bytes) {</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp; mstate ms = (mstate)msp;<br>
+<span style=COLOR:#ff0000>/*<br>
+如果定义了</span></span><span style=COLOR:#ff0000>FOOTERS==1,并且</span><span style=COLOR:#ff0000>INSECURE==0,这个才是有效的检测。</span><br style=COLOR:#ff0000>
+<span style=COLOR:#ff0000>#if (FOOTERS &amp;&amp; !INSECURE)</span><br style=COLOR:#ff0000>
+<span style=COLOR:#ff0000>#define ok_magic(M)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ((M)-&gt;magic == mparams.magic)</span><br style=COLOR:#ff0000>
+<span style=COLOR:#ff0000>#else&nbsp; /* (FOOTERS &amp;&amp; !INSECURE) */</span><br style=COLOR:#ff0000>
+<span style=COLOR:#ff0000>#define ok_magic(M)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (1)</span><br style=COLOR:#ff0000>
+<span style=COLOR:#ff0000>#endif /* (FOOTERS &amp;&amp; !INSECURE) */</span><br style=COLOR:#ff0000>
+<span style=COLOR:#ff0000>*/</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp; if (!ok_magic(ms)) {</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; USAGE_ERROR_ACTION(ms,ms);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; return 0;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp; }<br>
+<span style=COLOR:#ff0000>//看是否需要lock</span><br style=COLOR:#0000ff>
+</span><span style=COLOR:#0000ff>&nbsp; if (!PREACTION(ms)) {</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; void* mem;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; size_t nb;<br>
+</span><span style=COLOR:#0000ff><span style=COLOR:#ff0000>//如果size属于small bin的范围</span></span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; if (bytes &lt;= MAX_SMALL_REQUEST) {</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; bindex_t idx;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; binmap_t smallbits;<br>
+</span><span style=COLOR:#ff0000>//nb是按MALLOC_ALIGNMENT对齐后的size</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; nb = (bytes &lt; MIN_REQUEST)? MIN_CHUNK_SIZE : pad_request(bytes);<br>
+</span><span style=COLOR:#ff0000>//idx是nb在smallmap的位置,相当于nb/8,if nb==16,idx=2; 如果MIN_REQUEST最小是16,那么就是说smallmap前面2位是没有用的.</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; idx = small_index(nb);<br>
+</span><span style=COLOR:#ff0000>//得到实际的small map bits</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; smallbits = ms-&gt;smallmap &gt;&gt; idx;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#ff0000>//和0x03与的目的是为了知道:nb对应的smallbin list以及nb对应的下一个smallbin list是否有free的chunk.<br>
+//这样的做法是先得到best-fix的chunk<br style=COLOR:#0000ff>
+</span><span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if ((smallbits &amp; 0x3U) != 0) { /* Remainderless fit to a smallbin. */</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mchunkptr b, p;<br>
+</span><span style=COLOR:#ff0000>//如果最低位是0,idx+=1,相当于说如果idx对应的small bin是空,那么idx+1,用next small bin list<br>
+//如果最低位是1,idx不变,表示当前就有free的chunk<br style=COLOR:#0000ff>
+</span><span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; idx += ~smallbits &amp; 1;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* Uses next bin if idx empty */<br>
+<span style=COLOR:#ff0000>/*<br>
+先看</span></span><span style=COLOR:#ff0000>smallbin_at的定义:</span><br>
+<span style=COLOR:#ff0000>#define smallbin_at(M, i)&nbsp;&nbsp; ((sbinptr)((char*)&amp;((M)-&gt;smallbins[(i)&lt;&lt;1])))<br>
+这里就有一个疑问为什么i*2？先看下malloc_state里面smallbins的定义:mchunkptr&nbsp; smallbins[(NSMALLBINS+1)*2]; 其中</span><span style=COLOR:#ff0000>NSMALLBINS==32</span><br>
+<span style=COLOR:#ff0000>从直观上面来说只要定义NSMALLBINS个smallbins就可以，这边为什么要(NSMALLBINS+1)*2?<br>
+原因在于每一列的smallbins是一个双向循环链表,这边定义的mchunkptr的指针数组是用来保存fd,bk的.而不是用来保存某一列的头指针.<br>
+也就是说虽然他定义的是指针(mchunkptr),但是实际上我们是当成malloc_chunk的结构体来使用的,每个结构体的fd和bk部分占用了下一个chunk的overhead部分（</span><span style=COLOR:#ff0000>prev_foot and head</span><span style=COLOR:#ff0000>）.</span><br>
+<span style=COLOR:#ff0000><br>
+</span><img alt=""><img alt="">
+<div id=xrn_ style=TEXT-ALIGN:left>
+  <div id=fqgb style=TEXT-ALIGN:left>
+    <img src="images/ajdpnsgk6dr5_15fvt444g2_b.png" style="WIDTH:648px; HEIGHT:301.585px">
+  </div>
+  <br>
+  <br>
+  <span style=COLOR:#ff0000>上面这个图就说明了为啥要定义(NSMALLBINS+1)*2个mchunkptr,那个+1是因为前面需要空余2个字节用于第一个chunk的prev_foot and head.如果需要扩充malloc_chunk,那么相应的(NSMALLBINS+1)*2也需要改.</span><span style=COLOR:#ff0000><br>
+  </span>
+</div>
+<span style=COLOR:#ff0000>*/</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b = smallbin_at(ms, idx);<br>
+</span><span style=COLOR:#ff0000>//get the first available small bin</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p = b-&gt;fd;<br>
+</span><span style=COLOR:#ff0000>//left: get size from the head; right: get size from the idx(smallbin map)</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; assert(chunksize(p) == small_index2size(idx));<br>
+</span><span style=COLOR:#ff0000>//remove the first free chunk from the cycel link table, if there is only one free chunk in the link table, clear the bit in the smallbin map</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unlink_first_small_chunk(ms, b, p, idx);<br>
+</span><span style=COLOR:#ff0000>/*<br>
+设置当然chunk的head; 设置next chunk(物理上的next chunk,不是循环链表里面的)的prev_foot.<br>
+如果定义了FOOTERS==1,如果物理上前一个chunk是used,那么prev_foot =&nbsp; ((size_t)(M) ^ mparams.magic)),这样设置有个好处是后面可以用prev_foot直接得到<br>
+mstate,并且也起到magic number的作用(用于错误检测);如果前面一个chunk是free的, 那么prev_foot是前面一个chunk的size<br>
+</span><span style=COLOR:#ff0000>*/</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set_inuse_and_pinuse(ms, p, small_index2size(idx));<br>
+</span><span style=COLOR:#ff0000>/*<br>
+</span><span style=COLOR:#ff0000>p加上overhead的size，就是实际给caller的memory地址,需要注意的是,当一个chunk是一个used chunk的时候,fd,bk是当做给外面的内存用的。就是说我们前面说的overhead是prev_foot加上head的size;当一个chunk是free的时候,fd,bk才是有意义的.</span><br>
+<span style=COLOR:#ff0000>*/</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mem = chunk2mem(p);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; check_malloced_chunk(ms, mem, nb);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; goto postaction;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span><br style=COLOR:#0000ff>
+<span style=COLOR:#ff0000>/*<br>
+如果best-fit没有找到匹配的,就考虑用dv的chunk，如果dv size不够,就先考虑到大一点的small bin里面去找;如果仍然找不到,就去tree bin里面找.</span><br>
+<span style=COLOR:#ff0000>*/</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if (nb &gt; ms-&gt;dvsize) {</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (smallbits != 0) { /* Use chunk in next nonempty smallbin */</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mchunkptr b, p, r;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t rsize;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; bindex_t i;<br>
+</span><span style=COLOR:#ff0000>/*<br>
+#define idx2bit(i)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ((binmap_t)(1) &lt;&lt; (i)) 用于得到在smallbin map里面的bit位<br>
+#define left_bits(x)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ((x&lt;&lt;1) | -(x&lt;&lt;1))&nbsp;&nbsp; get larger bits,就是说比如x==0000 0100b,那么left_bits后,得到的是1111 1000(我用的是8位来举例，实际是32bits)<br>
+所以binmap_t leftbits实际上就是得到所有的比idx大的bit位.</span><br>
+<br>
+<span style=COLOR:#ff0000>*/</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; binmap_t leftbits = (smallbits &lt;&lt; idx) &amp; left_bits(idx2bit(idx));<br>
+</span><span style=COLOR:#ff0000>/*<br>
+</span><span style=COLOR:#ff0000>#define least_bit(x)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ((x) &amp; -(x))&nbsp; //get the least bit,for example,input 1111,0000, output 0001,0000<br>
+用来获得最小的有free chunk的smallbin链表<br>
+</span><span style=COLOR:#ff0000>*/</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; binmap_t leastbit = least_bit(leftbits);<br>
+<span style=COLOR:#ff0000>//</span></span><span style=COLOR:#ff0000>get smallbin index by bit, for example,&nbsp; input 00000100,output 2</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; compute_bit2idx(leastbit, i);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b = smallbin_at(ms, i);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p = b-&gt;fd;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; assert(chunksize(p) == small_index2size(i));</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unlink_first_small_chunk(ms, b, p, i);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rsize = small_index2size(i) - nb;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* Fit here cannot be remainderless if 4byte sizes */</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (SIZE_T_SIZE != 4 &amp;&amp; rsize &lt; MIN_CHUNK_SIZE)</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set_inuse_and_pinuse(ms, p, small_index2size(i));</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else {<br>
+</span><span style=COLOR:#ff0000>/*<br>
+把余下的部分重新生成一个chunk,新的chunk也是新的dv chunk<br>
+</span><span style=COLOR:#ff0000>*/</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set_size_and_pinuse_of_inuse_chunk(ms, p, nb);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; r = chunk_plus_offset(p, nb);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set_size_and_pinuse_of_free_chunk(r, rsize);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; replace_dv(ms, r, rsize);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mem = chunk2mem(p);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; check_malloced_chunk(ms, mem, nb);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; goto postaction;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span><br style=COLOR:#0000ff>
+<span style=COLOR:#ff0000>/*<br>
+从一个tree bin里面分一个small bin出来<br>
+</span><span style=COLOR:#ff0000>*/</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if (ms-&gt;treemap != 0 &amp;&amp; (mem = <a href=#tmalloc_small id=wa0w target=_self title=tmalloc_small>tmalloc_small</a>(ms, nb)) != 0) {</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; check_malloced_chunk(ms, mem, nb);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; goto postaction;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; }</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; else if (bytes &gt;= MAX_REQUEST)</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; nb = MAX_SIZE_T; /* Too big to allocate. Force failure (in sys alloc) */</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; else {<br>
+</span><span style=COLOR:#ff0000>/*<br>
+从一个tree bin去分配一个chunk for large request<br>
+&nbsp;</span><span style=COLOR:#ff0000>*/</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; nb = pad_request(bytes);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (ms-&gt;treemap != 0 &amp;&amp; (mem = tmalloc_large(ms, nb)) != 0) {</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; check_malloced_chunk(ms, mem, nb);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; goto postaction;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; }</span><br style=COLOR:#0000ff>
+<span style=COLOR:#ff0000>/*<br>
+如果best-fit没有找到匹配的,就考虑用dv的chunk，所谓dv chunk是说最近一次切割的chunk留下的那部分新chunk.<br>
+不论是small request还是large request，当best-fit失败后,都会去到dv chunk里面去尝试.<br>
+</span><span style=COLOR:#ff0000>*/</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; if (nb &lt;= ms-&gt;dvsize) {</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t rsize = ms-&gt;dvsize - nb;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mchunkptr p = ms-&gt;dv;<br>
+</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (rsize &gt;= MIN_CHUNK_SIZE) { /* split dv */<br>
+</span><span style=COLOR:#ff0000>/*<br>
+dv size 足够大,可以把余下的部分重新生成一个chunk,新的chunk也是新的dv chunk<br>
+</span><span style=COLOR:#ff0000>*/</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mchunkptr r = ms-&gt;dv = chunk_plus_offset(p, nb);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ms-&gt;dvsize = rsize;<br>
+<span style=COLOR:#ff0000>//重新生成一个新的chunk,设置当前chunk的head；以及设置物理上下一个chunk的prev_foot(等于前一个free chunk的size)</span><br style=COLOR:#0000ff>
+</span><span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set_size_and_pinuse_of_free_chunk(r, rsize);<br>
+</span><span style=COLOR:#0000ff><span style=COLOR:#ff0000>//设置p(前面拆分出来给caller的内存的那个chunk)的head,以及新chunk(r)的prev_foot.</span></span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set_size_and_pinuse_of_inuse_chunk(ms, p, nb);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else { /* exhaust dv */<br>
+</span><span style=COLOR:#ff0000>/*<br>
+把所有的dv都当成一个chunk分配出去.<br>
+</span><span style=COLOR:#ff0000>*/</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t dvs = ms-&gt;dvsize;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ms-&gt;dvsize = 0;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ms-&gt;dv = 0;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set_inuse_and_pinuse(ms, p, dvs);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mem = chunk2mem(p);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; check_malloced_chunk(ms, mem, nb);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; goto postaction;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; }</span><br style=COLOR:#0000ff>
+<span style=COLOR:#ff0000>/*<br>
+如果前面的都没有找到可以用的chunk,就去top里面找.top不是smallbin和treebin维护的,是mstate维护的一个指针,可以维护的是一段未用过的整块的buffer,如果前面分配不出来,就不断的从top里面去切割出一块来，直到把所有的top都用光.top用光了并不代表内存用完了，只是说明整个heap都曾经被用过而已.<br>
+</span><span style=COLOR:#ff0000>*/</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; else if (nb &lt; ms-&gt;topsize) { /* Split top */</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t rsize = ms-&gt;topsize -= nb;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mchunkptr p = ms-&gt;top;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mchunkptr r = ms-&gt;top = chunk_plus_offset(p, nb);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; r-&gt;head = rsize | PINUSE_BIT;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set_size_and_pinuse_of_inuse_chunk(ms, p, nb);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mem = chunk2mem(p);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; check_top_chunk(ms, ms-&gt;top);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; check_malloced_chunk(ms, mem, nb);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; goto postaction;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; }</span><br style=COLOR:#0000ff>
+<span style=COLOR:#ff0000>//这部分是从系统去分配内存</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; mem = sys_alloc(ms, nb);</span><br style=COLOR:#0000ff>
+<br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp; postaction:</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; POSTACTION(ms);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; return mem;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp; }</span><br style=COLOR:#0000ff>
+<br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp; return 0;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>}</span><br>
+<br>
+<b><font size=3>3.<a id=tmalloc_small name=tmalloc_small></a>tmalloc_small</font></b><br>
+<span style=COLOR:#0000ff>static void* tmalloc_small(mstate m, size_t nb) {</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp; tchunkptr t, v;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp; size_t rsize;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp; bindex_t i;<br>
+<span style=COLOR:#ff0000>//得到最小的一个tree</span><br style=COLOR:#0000ff>
+</span><span style=COLOR:#0000ff>&nbsp; binmap_t leastbit = least_bit(m-&gt;treemap);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp; compute_bit2idx(leastbit, i);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp; v = t = *treebin_at(m, i);<br>
+<span style=COLOR:#ff0000>//chunk size 必定大于nb,因为nb是small request</span><br style=COLOR:#0000ff>
+</span><span style=COLOR:#0000ff>&nbsp; rsize = chunksize(t) - nb;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#ff0000>/*<br>
+</span><span style=COLOR:#ff0000>#define leftmost_child(t) ((t)-&gt;child[0] != 0? (t)-&gt;child[0] : (t)-&gt;child[1])&nbsp;&nbsp;&nbsp;<br>
+如果有左child用左child,没有用右child.<br>
+下面就是不断的去找当前tree下面最小的一个chunk.<br>
+</span><span style=COLOR:#ff0000>*/</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp; while ((t = leftmost_child(t)) != 0) {</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; size_t trem = chunksize(t) - nb;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; if (trem &lt; rsize) {</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rsize = trem;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; v = t;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; }</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp; }</span><br style=COLOR:#0000ff>
+<br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp; if (RTCHECK(ok_address(m, v))) {</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; mchunkptr r = chunk_plus_offset(v, nb);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; assert(chunksize(v) == rsize + nb);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; if (RTCHECK(ok_next(v, r))) {<br>
+</span><span style=COLOR:#ff0000>/*<br>
+</span><span style=COLOR:#ff0000>把这个chunk从当前tree里面剥离掉.<br>
+</span><span style=COLOR:#ff0000>*/</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unlink_large_chunk(m, v);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (rsize &lt; MIN_CHUNK_SIZE)</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set_inuse_and_pinuse(m, v, (rsize + nb));</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else {<br>
+</span><span style=COLOR:#ff0000>/*<br>
+</span><span style=COLOR:#ff0000>切割large chunk,重新设置dv<br>
+</span><span style=COLOR:#ff0000>*/</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set_size_and_pinuse_of_inuse_chunk(m, v, nb);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set_size_and_pinuse_of_free_chunk(r, rsize);</span><span style=COLOR:#0000ff><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; replace_dv(m, r, rsize);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return chunk2mem(v);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; }</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp; }</span><br style=COLOR:#0000ff>
+<br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp; CORRUPTION_ERROR_ACTION(m);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp; return 0;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>}</span><br style=COLOR:#0000ff>
+<br>
+<b><font size=3>4.<a id=hyg- name=tmalloc_small></a>tmalloc_large</font></b><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>static void* tmalloc_large(mstate m, size_t nb) {</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp; tchunkptr v = 0;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp; size_t rsize = -nb; /* Unsigned negation */</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp; tchunkptr t;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp; bindex_t idx;<br>
+</span><span style=COLOR:#ff0000>/*<br>
+得到tree bin的idx,比如nb==288,那么idx==1.</span><span style=COLOR:#ff0000><br>
+</span><span style=COLOR:#ff0000>*/</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp; compute_tree_index(nb, idx);<br>
+</span><span style=COLOR:#ff0000>/*<br>
+得到tree map指向的tree bin指针.</span><span style=COLOR:#ff0000><br>
+</span><span style=COLOR:#ff0000>*/</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp; if ((t = *treebin_at(m, idx)) != 0) {</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; /* Traverse tree for this bin looking for node with size == nb */<br>
+</span><span style=COLOR:#ff0000><a id=leftshift_for_tree_index name=leftshift_for_tree_index></a>/*</span><font size=3><span style=FONT-FAMILY:宋体><br>
+<font size=2 style=COLOR:#ff0000><span style=FONT-FAMILY:Verdana>宏</span></font></span><font face="Times New Roman" size=2 style="FONT-FAMILY:Verdana; COLOR:#ff0000">leftshift_for_tree_index(idx)</font><font size=2 style=COLOR:#ff0000><span style=FONT-FAMILY:Verdana>计算的是</span></font><font face="Times New Roman" size=2 style="FONT-FAMILY:Verdana; COLOR:#ff0000">32</font><font size=2 style=COLOR:#ff0000><span style=FONT-FAMILY:Verdana>减去</span></font><font face="Times New Roman" size=2 style="FONT-FAMILY:Verdana; COLOR:#ff0000"> idx</font><font size=2 style=COLOR:#ff0000><span style=FONT-FAMILY:Verdana>对应的range长度的值(需要用到的bits的个数),比如第一个tree的range[256,384),range==128,我们用bits of range来表示就是7个bits.</span></font></font> <span style=COLOR:#ff0000>32-7==25. 也就是说</span><font size=3><font face="Times New Roman" size=2 style="FONT-FAMILY:Verdana; COLOR:#ff0000">leftshift_for_tree_index(0),返回的是25.<br>
+以下是idx对应的返回值:</font></font><br>
+<p class=MsoNormal style="MARGIN-LEFT:42pt; COLOR:#ff0000">
+  0=&gt;25
+</p>
+<p class=MsoNormal style="MARGIN-LEFT:42pt; COLOR:#ff0000">
+  1=&gt;25
+</p>
+<p class=MsoNormal style="MARGIN-LEFT:42pt; COLOR:#ff0000">
+  2=&gt;24
+</p>
+<p class=MsoNormal style="MARGIN-LEFT:42pt; COLOR:#ff0000">
+  3=&gt;24
+</p>
+<p class=MsoNormal style="MARGIN-LEFT:42pt; COLOR:#ff0000">
+  4=&gt;23
+</p>
+<p class=MsoNormal style="MARGIN-LEFT:42pt; COLOR:#ff0000">
+  5=&gt;23
+</p>
+<p class=MsoNormal style="MARGIN-LEFT:42pt; COLOR:#ff0000">
+  6=&gt;22
+</p>
+<p class=MsoNormal style="MARGIN-LEFT:42pt; COLOR:#ff0000">
+  7=&gt;22
+</p>
+<p class=MsoNormal style="MARGIN-LEFT:42pt; COLOR:#ff0000">
+  8=&gt;21
+</p>
+<p class=MsoNormal style="MARGIN-LEFT:42pt; COLOR:#ff0000">
+  9=&gt;21
+</p>
+<p class=MsoNormal style="MARGIN-LEFT:42pt; COLOR:#ff0000">
+  10=&gt;20
+</p>
+<p class=MsoNormal style="MARGIN-LEFT:42pt; COLOR:#ff0000">
+  11=&gt;20
+</p>
+<p class=MsoNormal style="MARGIN-LEFT:42pt; COLOR:#ff0000">
+  12=&gt;19
+</p>
+<p class=MsoNormal style="MARGIN-LEFT:42pt; COLOR:#ff0000">
+  13=&gt;19
+</p>
+<p class=MsoNormal style="MARGIN-LEFT:42pt; COLOR:#ff0000">
+  14=&gt;18
+</p>
+<p class=MsoNormal style="MARGIN-LEFT:42pt; COLOR:#ff0000">
+  15=&gt;18
+</p>
+<p class=MsoNormal style="MARGIN-LEFT:42pt; COLOR:#ff0000">
+  16=&gt;17
+</p>
+<p class=MsoNormal style="MARGIN-LEFT:42pt; COLOR:#ff0000">
+  17=&gt;17
+</p>
+<p class=MsoNormal style="MARGIN-LEFT:42pt; COLOR:#ff0000">
+  18=&gt;16
+</p>
+<p class=MsoNormal style="MARGIN-LEFT:42pt; COLOR:#ff0000">
+  19=&gt;16
+</p>
+<p class=MsoNormal style="MARGIN-LEFT:42pt; COLOR:#ff0000">
+  20=&gt;15
+</p>
+<p class=MsoNormal style="MARGIN-LEFT:42pt; COLOR:#ff0000">
+  21=&gt;15
+</p>
+<p class=MsoNormal style="MARGIN-LEFT:42pt; COLOR:#ff0000">
+  22=&gt;14
+</p>
+<p class=MsoNormal style="MARGIN-LEFT:42pt; COLOR:#ff0000">
+  23=&gt;14
+</p>
+<p class=MsoNormal style="MARGIN-LEFT:42pt; COLOR:#ff0000">
+  24=&gt;13
+</p>
+<p class=MsoNormal style="MARGIN-LEFT:42pt; COLOR:#ff0000">
+  25=&gt;13
+</p>
+<p class=MsoNormal style="MARGIN-LEFT:42pt; COLOR:#ff0000">
+  26=&gt;12
+</p>
+<p class=MsoNormal style="MARGIN-LEFT:42pt; COLOR:#ff0000">
+  27=&gt;12
+</p>
+<p class=MsoNormal style="MARGIN-LEFT:42pt; COLOR:#ff0000">
+  28=&gt;11
+</p>
+<p class=MsoNormal style="MARGIN-LEFT:42pt; COLOR:#ff0000">
+  29=&gt;11
+</p>
+<p class=MsoNormal style="MARGIN-LEFT:42pt; COLOR:#ff0000">
+  30=&gt;10
+</p>
+<p class=MsoNormal style="MARGIN-LEFT:42pt; COLOR:#ff0000">
+  31=&gt;0
+</p>
+<span style=COLOR:#ff0000>idx越大,返回的值越小.<br>
+nb移位后,sizebits实际上就是所有的需要的bit位移到最左边.<br>
+</span><span style=COLOR:#ff0000>用288举例,sizebits == 0</span><span style=COLOR:#ff0000>,如果第0个tree里面有最深的左child就可以满足.(首先找最深的leaf,left child可以满足条件)<br>
+用1024举例,</span><span style=COLOR:#ff0000>idx==4,sizebits == 0</span><span style=COLOR:#ff0000>,</span><span style=COLOR:#ff0000>,如果第4个tree里面有最深的左child就可以满足.(首先找最深的leaf,left child可以满足条件)</span><span style=COLOR:#ff0000><br>
+</span><span style=COLOR:#ff0000>*/</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; size_t sizebits = nb &lt;&lt; leftshift_for_tree_index(idx);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; tchunkptr rst = 0;&nbsp; /* The deepest untaken right subtree */</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; for (;;) {</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tchunkptr rt;<br>
+</span><span style=COLOR:#ff0000>/*<br>
+size_trem是当前chunk比nb多余出来的大小<br>
+rsize可以看成是上一个chunk比较,多余出来的大小.<br>
+</span><span style=COLOR:#ff0000>*/</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t trem = chunksize(t) - nb;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (trem &lt; rsize) {</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; v = t;<br>
+</span><span style=COLOR:#ff0000>/*<br>
+正好满足条件<br>
+</span><span style=COLOR:#ff0000>*/</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if ((rsize = trem) == 0)</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; break;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+</span><span style=COLOR:#ff0000>/*<br>
+得到right child<br>
+</span><span style=COLOR:#ff0000>*/</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rt = t-&gt;child[1];<br>
+</span><span style=COLOR:#ff0000>/*<br>
+根据size得到应该去查找的那个child.这个可以参加前面的2个部分:<a href=#tree_traveser id=mfhu style=COLOR:#ff0000 target=_self title=1>1</a><span style=COLOR:#ff0000>,</span><a href=#leftshift_for_tree_index id=om.0 style=COLOR:#ff0000 target=_self title=2>2</a><span style=COLOR:#ff0000>.</span><br style=COLOR:#ff0000>
+sizebits对应的如何去遍历所有的child的规则.</span><br>
+<span style=COLOR:#ff0000>*/</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; t = t-&gt;child[(sizebits &gt;&gt; (SIZE_T_BITSIZE-SIZE_T_ONE)) &amp; 1];<br>
+</span><span style=COLOR:#ff0000>/*<br>
+如果best fit(t)不是null,肯定是优先t;如果t是null,只能去找right child(rt).</span><br>
+<span style=COLOR:#ff0000>*/</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (rt != 0 &amp;&amp; rt != t)</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rst = rt;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (t == 0) {<br>
+</span><span style=COLOR:#ff0000>/*<br>
+如果best fit child is null,就去获得上一次取得的best fit child,这样也是取得的最小的tree bin.</span><br>
+<span style=COLOR:#ff0000>*/</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; t = rst; /* set t to least subtree holding sizes &gt; nb */</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; break;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+</span><span style=COLOR:#ff0000>/*<br>
+下一层去查找child的规则.</span><br>
+<span style=COLOR:#ff0000>*/</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sizebits &lt;&lt;= 1;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; }</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp; }<br>
+</span><span style=COLOR:#ff0000>/*<br>
+t==0 表示没有找到合适的bin<br>
+v==0 表示当然idx对应的tree是空.<br>
+</span> <span style=COLOR:#ff0000>*/</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp; if (t == 0 &amp;&amp; v == 0) { /* set t to root of next non-empty treebin */<br>
+</span><span style=COLOR:#ff0000>/*<br>
+得到所有larger的tree bits<br>
+</span> <span style=COLOR:#ff0000>*/</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; binmap_t leftbits = left_bits(idx2bit(idx)) &amp; m-&gt;treemap;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; if (leftbits != 0) {</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; bindex_t i;<br>
+</span><span style=COLOR:#ff0000>/*<br>
+得到右边larger的tree bit(仅仅是一个)<br>
+</span> <span style=COLOR:#ff0000>*/</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; binmap_t leastbit = least_bit(leftbits);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; compute_bit2idx(leastbit, i);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; t = *treebin_at(m, i);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; }</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp; }</span><br style=COLOR:#0000ff>
+<span style=COLOR:#ff0000>/*<br>
+找最小的tree bin<br>
+</span> <span style=COLOR:#ff0000>*/</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp; while (t != 0) { /* find smallest of tree or subtree */</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; size_t trem = chunksize(t) - nb;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; if (trem &lt; rsize) {</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rsize = trem;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; v = t;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; }</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; t = leftmost_child(t);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp; }</span><br style=COLOR:#0000ff>
+<span style=COLOR:#ff0000>/*<br>
+看看是dv size是best fit 还是当前找到的bin best fit<br>
+下面的是去切割tree bin的代码<br>
+</span> <span style=COLOR:#ff0000>*/</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp; /*&nbsp; If dv is a better fit, return 0 so malloc will use it */</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp; if (v != 0 &amp;&amp; rsize &lt; (size_t)(m-&gt;dvsize - nb)) {</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; if (RTCHECK(ok_address(m, v))) { /* split */</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mchunkptr r = chunk_plus_offset(v, nb);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; assert(chunksize(v) == rsize + nb);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (RTCHECK(ok_next(v, r))) {</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unlink_large_chunk(m, v);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (rsize &lt; MIN_CHUNK_SIZE)</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set_inuse_and_pinuse(m, v, (rsize + nb));</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else {</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set_size_and_pinuse_of_inuse_chunk(m, v, nb);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set_size_and_pinuse_of_free_chunk(r, rsize);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; insert_chunk(m, r, rsize);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return chunk2mem(v);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; }</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; CORRUPTION_ERROR_ACTION(m);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp; }</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp; return 0;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>}</span><br>
+<br>
+<br>
+<b><font size=3>5.<a id=l5gq name=tmalloc_small></a></font><font size=3>mspace_free</font></b><br>
+<span style=COLOR:#0000ff>void mspace_free(mspace msp, void* mem) {</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp; if (mem != 0) {</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; mchunkptr p&nbsp; = mem2chunk(mem);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>#if FOOTERS</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; mstate fm = get_mstate_for(p);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; msp = msp; /* placate people compiling -Wunused */</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>#else /* FOOTERS */</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; mstate fm = (mstate)msp;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>#endif /* FOOTERS */</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; if (!ok_magic(fm)) {</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; USAGE_ERROR_ACTION(fm, p);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; }</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; if (!PREACTION(fm)) {</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; check_inuse_chunk(fm, p);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (RTCHECK(ok_address(fm, p) &amp;&amp; ok_inuse(p))) {</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t psize = chunksize(p);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mchunkptr next = chunk_plus_offset(p, psize);<br>
+</span><span style=COLOR:#ff0000>/*<br>
+如果前面的一个chunk is free<br>
+</span> <span style=COLOR:#ff0000>*/</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (!pinuse(p)) {&nbsp; </span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t prevsize = p-&gt;prev_foot;<br>
+</span><span style=COLOR:#ff0000>/*<br>
+#define is_mmapped(p)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (((p)-&gt;head &amp; INUSE_BITS) == 0)<br>
+如果前面的chunk和当前的chunk的head的PINUSE_BIT和CINUSE_BIT都是0<br>
+由于没有用到mmap,这部分没仔细看.<br>
+如果没有用到mmap,前面是不是应该做一个cinuse的检测?<br>
+</span> <span style=COLOR:#ff0000>*/</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (is_mmapped(p)) { </span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; psize += prevsize + MMAP_FOOT_PAD;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (CALL_MUNMAP((char*)p - prevsize, psize) == 0)</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fm-&gt;footprint -= psize;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; goto postaction;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=COLOR:#ff0000>// 前一个chunk 是free的,当前chunk是used</span></span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mchunkptr prev = chunk_minus_offset(p, prevsize);//get pre chunk pointer</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; psize += prevsize;//add pre chunk size</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p = prev;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (RTCHECK(ok_address(fm, prev))) { /* consolidate backward */<br>
+</span><span style=COLOR:#ff0000>/*<br>
+如果前一个chunk不是dv,那么就把它从tree的管理或者small bin的管理里面unlink出来,后面用来和当前的chunk合并<br>
+</span> <span style=COLOR:#ff0000>*/</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (p != fm-&gt;dv) {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //pre chunk is not dv, so unlink it from free list, it will be merged</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unlink_chunk(fm, p, prevsize);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+</span><span style=COLOR:#ff0000>/*<br>
+如果下一个chunk是used,并且延续上面的条件,这个case里面前面一个chunk就是dv,这样直接合并的chunk就是dv了,同时修改dv size.<br>
+</span> <span style=COLOR:#ff0000>*/</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if ((next-&gt;head &amp; INUSE_BITS) == INUSE_BITS) { //next chunk is used</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fm-&gt;dvsize = psize;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set_free_with_pinuse(p, psize, next);&nbsp;&nbsp;&nbsp; //set pre chunk head, set next chunk prev_foot</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; goto postaction;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; goto erroraction;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span><span style=COLOR:#0000ff><br>
+</span><span style=COLOR:#ff0000>/*<br>
+</span><span style=COLOR:#0000ff><span style=COLOR:#ff0000>if pre is freed, the pointer of p pointer to the pre chunk, or pointer to current chunk</span></span><br>
+<span style=COLOR:#ff0000> 这个时候,如果前一个chunk是free的,p就是指向前一个chunk的;否则就是指向当前chunk的.<br>
+</span> <span style=COLOR:#ff0000>*/</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (RTCHECK(ok_next(p, next) &amp;&amp; ok_pinuse(next))) {<br>
+</span><span style=COLOR:#ff0000>/*<br>
+</span><span style=COLOR:#0000ff><span style=COLOR:#ff0000>如果下一个chunk也是free的.</span></span><span style=COLOR:#ff0000><br>
+</span> <span style=COLOR:#ff0000>*/</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (!cinuse(next)) {&nbsp; /* consolidate forward */&nbsp;&nbsp; //if next is free, prev+current+next chunk will be merged<br>
+</span><span style=COLOR:#ff0000>/*<br>
+</span><span style=COLOR:#0000ff><span style=COLOR:#ff0000>如果下一个chunk是top,就合并指针p对应的chunk和top指针.其实就是top重定向到p.</span></span><span style=COLOR:#ff0000><br>
+</span> <span style=COLOR:#ff0000>*/</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (next == fm-&gt;top) {&nbsp;&nbsp;&nbsp; //if next is top, increase the top size, and change top pointer</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t tsize = fm-&gt;topsize += psize;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fm-&gt;top = p;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p-&gt;head = tsize | PINUSE_BIT;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (p == fm-&gt;dv) {</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fm-&gt;dv = 0;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fm-&gt;dvsize = 0;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (should_trim(fm, tsize))&nbsp;&nbsp;&nbsp;&nbsp; //do not need MORECORE_CANNOT_TRIM</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sys_trim(fm, 0);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; goto postaction;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+</span><span style=COLOR:#ff0000>/*<br>
+</span><span style=COLOR:#0000ff><span style=COLOR:#ff0000>如果下一个chunk是dv,就合并指针p对应的chunk和dv指针.其实就是dv重定向到p.</span></span><span style=COLOR:#ff0000><br>
+</span> <span style=COLOR:#ff0000>*/</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if (next == fm-&gt;dv) { //if next is dv, increase the dv size, and change dv pointer</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t dsize = fm-&gt;dvsize += psize;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fm-&gt;dv = p;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set_size_and_pinuse_of_free_chunk(p, dsize);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; goto postaction;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+</span><span style=COLOR:#ff0000>/*<br>
+</span><span style=COLOR:#0000ff><span style=COLOR:#ff0000>合并p和next chunk</span></span><span style=COLOR:#ff0000><br>
+</span> <span style=COLOR:#ff0000>*/</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //merge next chunk</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size_t nsize = chunksize(next);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; psize += nsize;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unlink_chunk(fm, next, nsize);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set_size_and_pinuse_of_free_chunk(p, psize); //merge prev+current+next chunk</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (p == fm-&gt;dv) {</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fm-&gt;dvsize = psize;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; goto postaction;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; set_free_with_pinuse(p, psize, next);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#ff0000>/*<br>
+</span><span style=COLOR:#0000ff><span style=COLOR:#ff0000>合并后仍然是small size</span></span><span style=COLOR:#ff0000><br>
+</span> <span style=COLOR:#ff0000>*/</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (is_small(psize)) {</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; insert_small_chunk(fm, p, psize);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; check_free_chunk(fm, p);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+</span><span style=COLOR:#ff0000>/*<br>
+</span><span style=COLOR:#0000ff><span style=COLOR:#ff0000>合并后仍然是large size</span></span><span style=COLOR:#ff0000><br>
+</span> <span style=COLOR:#ff0000>*/</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else {</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tchunkptr tp = (tchunkptr)p;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; insert_large_chunk(fm, tp, psize);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; check_free_chunk(fm, p);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (--fm-&gt;release_checks == 0)</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; release_unused_segments(fm);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; goto postaction;</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; erroraction:</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; USAGE_ERROR_ACTION(fm, p);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; postaction:</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; POSTACTION(fm);</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp;&nbsp;&nbsp; }</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>&nbsp; }</span><br style=COLOR:#0000ff>
+<span style=COLOR:#0000ff>}</span><br>
+<br>
+<br>
+<b><font size=4><a id=四.使用自带的DEBUG功能 name=四.使用自带的DEBUG功能></a>四.使用自带的DEBUG功能</font></b><br>
+1.什么时候用<br>
+porting 或者出现异常的时候.特别是porting的时候,如果你修改了一些东西,用DEBUG模式很容易定位问题.<br>
+<br>
+2.how to use<br>
+首先打开DEBUG的宏：<br>
+#define DL_DEBUG 1<br>
+然后检测下列宏ABORT的定义,要让ABORT 有效。<br>
+因为DEBUG模式下:<br>
+#define assert(x) if(!(x)) ABORT<br>
+我们要确保assert是work的.<br>
+<br>
+<br>
+<b><font size=4><a id=五.增加FILE/LINE_debug功能 name=五.增加FILE/LINE_debug功能></a>五.增加FILE/LINE debug功能</font></b><br>
+修改dlmalloc需要注意如下方面:<br>
+1.<br>
+修改malloc_chunk或者malloc_tree_chunk之前,首先要明白一个事情,不管是small bin 还是large bin,如果是used状态,那么他们的头结构是一样的.<br>
+首先看malloc_chunk的定义:<br>
+struct malloc_chunk {<br>
+&nbsp; size_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; prev_foot;&nbsp; /* Size of previous chunk (if free).&nbsp; */<br>
+&nbsp; size_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; head;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* Size and inuse bits. */<br>
+&nbsp; struct malloc_chunk* fd;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* double links -- used only if free. */<br>
+&nbsp; struct malloc_chunk* bk;<br>
+};<br>
+如果chunk是used状态,那么fd,bk是没有用的,他们是当做内存返回给caller的,也就是说used状态他的结构只有prev_foot and head;<br>
+如果chunk是free状态,这个结构才是完整有效的.<br>
+malloc_tree_chunk也是一样的.<br>
+struct malloc_tree_chunk {<br>
+&nbsp; /* The first four fields must be compatible with malloc_chunk */<br>
+&nbsp; size_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; prev_foot;<br>
+&nbsp; size_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; head;<br>
+&nbsp; struct malloc_tree_chunk* fd;<br>
+&nbsp; struct malloc_tree_chunk* bk;<br>
+<br>
+&nbsp; struct malloc_tree_chunk* child[2];<br>
+&nbsp; struct malloc_tree_chunk* parent;<br>
+&nbsp; bindex_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; index;<br>
+};<br>
+如果chunk是used状态,那么head之后所有的成员都是没有用的,他们是当做内存返回给caller的,也就是说used状态他的结构只有prev_foot and head;<br>
+如果chunk是free状态,这个结构才是完整有效的.<br>
+因为代码设计的原因,我们必须保证used状态下,small bin 和large bin的结构是一样的.<br>
+我的修改如下:<br>
+struct malloc_chunk {<br>
+#if DL_DEBUG<br>
+&nbsp; UINT32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pad1;<br>
+#endif<br>
+&nbsp; UINT32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; prev_foot;&nbsp; /* Size of previous chunk (if free).&nbsp; */<br>
+&nbsp; UINT32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; head;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* Size and inuse bits. */<br>
+&nbsp;#if DL_DEBUG<br>
+&nbsp; CHAR*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; file_name;<br>
+&nbsp; UINT32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; code_line;<br>
+&nbsp; UINT32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; needed_size;<br>
+#endif<br>
+&nbsp; struct malloc_chunk* fd;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* double links -- used only if free. */<br>
+&nbsp; struct malloc_chunk* bk;<br>
+};<br>
+<br>
+struct malloc_tree_chunk {<br>
+&nbsp; /* The first four fields must be compatible with malloc_chunk */<br>
+#if DL_DEBUG<br>
+&nbsp; UINT32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pad1;<br>
+#endif<br>
+&nbsp; UINT32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; prev_foot;<br>
+&nbsp; UINT32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; head;<br>
+#if DL_DEBUG<br>
+&nbsp; CHAR*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; file_name;<br>
+&nbsp; UINT32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; code_line;<br>
+&nbsp; UINT32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; needed_size;<br>
+#endif<br>
+&nbsp; struct malloc_tree_chunk* fd;<br>
+&nbsp; struct malloc_tree_chunk* bk;<br>
+<br>
+&nbsp; struct malloc_tree_chunk* child[2];<br>
+&nbsp; struct malloc_tree_chunk* parent;<br>
+&nbsp; bindex_t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; index;<br>
+};<br>
+<br>
+同样CHUNK_OVERHEAD也要改成used状态下有效的结构体大小.<br>
+<br>
+2.sizeof malloc_chunk必须满足如下条件<br>
+((MCHUNK_SIZE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &amp; (MCHUNK_SIZE-SIZE_T_ONE))&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; == 0)<br>
+也就是说必须是2的n次方<br>
+<br>
+3.修改了malloc_chunk,就要相应的修改malloc_state里面smallbins的size：<br>
+mchunkptr&nbsp; smallbins[(NSMALLBINS+3)*2];<br>
+原因可以参考前面算法概述里面.基本上可以这个size是: NSMALLBINS*2 + 结构体里面fd前面成员总共的大小.<br>
+<br>
+4.mspace_malloc<br>
+里面要注意里面有这么一句:<br>
+if (SIZE_T_SIZE != 4 &amp;&amp; rsize &lt; MIN_CHUNK_SIZE)<br>
+如果修改了chunk的结构体,需要把前面的条件去掉.<br>
+<br>
+<br>
+<br>
+<br></body>
+</html>

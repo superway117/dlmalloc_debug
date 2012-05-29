@@ -1,0 +1,336 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; Copyright (C) 2009 Infineon Technologies AG, All Rights Reserved.
+;;
+;; File:   DumpDLHeap.cmm
+;;
+;; Desc:   Dump DL heap
+;;
+;; Author: Eason Pan
+;;
+;; Date:   April 2010
+;;
+;; Notes:
+;;
+;; The script takes an optional parameter "filename"
+;;
+;; If filename is given, the dump is routed to the file (in Excel .csv format)
+;; Otherwise the dump is directed to a T32 Area (Max 1000 lines)
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;constant
+LOCAL &TRUE
+LOCAL &FALSE
+LOCAL &SIZE_T_ONE
+LOCAL &CHUNK_OVERHEAD
+LOCAL &CHUNK_ALIGN_MASK
+LOCAL &MALLOC_ALIGNMENT
+LOCAL &TOP_FOOT_SIZE
+LOCAL &MIN_CHUNK_SIZE
+LOCAL &SIZEOF_SEGMENT_STRUCT
+LOCAL &FLAG_BITS
+LOCAL &PINUSE_BIT
+LOCAL &CINUSE_BIT
+LOCAL &INUSE_BITS
+LOCAL &MALLOC_MAGIC_NUMBER
+LOCAL &FREE_MAGIC_NUMBER
+
+
+;global variable
+LOCAL &heap_index
+LOCAL &result
+
+;global variable for one heap
+LOCAL &total_memory_size
+LOCAL &total_used_memory_size
+LOCAL &total_need_memory_size
+LOCAL &total_waste_memory_size
+LOCAL &total_peak_memory_size
+
+LOCAL &total_chunk_number
+LOCAL &total_used_small_chunk_number
+LOCAL &total_used_large_chunk_number
+LOCAL &total_free_small_chunk_number
+LOCAL &total_free_large_chunk_number
+
+LOCAL &heap_ms_addr
+LOCAL &heap_ms_p
+
+LOCAL &seg_addr
+LOCAL &seg_p
+
+;global variable for one chunk
+LOCAL &chunk_addr
+LOCAL &chunk_head
+LOCAL &chunk_p
+LOCAL &mem_addr
+LOCAL &chunk_size
+LOCAL &code_line
+LOCAL &file_name
+LOCAL &need_size
+
+;define&set parameter
+LOCAL &file
+ENTRY &file
+
+;set value for constant
+&FALSE=0==1
+&TRUE=0==0
+&SIZE_T_ONE=4
+&CHUNK_ALIGN_MASK=0xF
+&MALLOC_ALIGNMENT=0x10
+&CHUNK_OVERHEAD=0x18
+&MIN_CHUNK_SIZE=0x20
+&SIZEOF_SEGMENT_STRUCT=0x10
+&TOP_FOOT_SIZE=0x58
+&FLAG_BITS=(1|2|4)
+&PINUSE_BIT=1
+&CINUSE_BIT=2
+&INUSE_BITS=(1|2)
+&MALLOC_MAGIC_NUMBER=0x77777777 
+&FREE_MAGIC_NUMBER=0x99999999
+ 
+;init global variable
+&heap_index=0
+
+AREA.Create HEAPWALK 160. 1000.
+AREA.Select HEAPWALK
+AREA.View HEAPWALK
+IF ("&file"!="")
+   AREA.Open HEAPWALK &file
+  
+WHILE (&heap_index<V.Value(sizeof(s_mmi_heap)/sizeof(s_mmi_heap[0])))
+(
+	;IF (V.Value(s_mmi_heap_ms[&heap_index]) != "")
+	GOSUB WalkHeap
+	ENTRY &result
+	IF (&result==0)
+		GOTO EndHeapWalk
+	ELSE
+		&heap_index=&heap_index+1
+	PRINT ""
+
+)
+GOTO EndHeapWalk
+
+EndHeapWalk:
+   IF ("&file"!="")
+      AREA.Close HEAPWALK
+   AREA.Select A000
+   ENDDO
+   
+WalkHeap:
+	LOCAL &heap_is_ok
+	LOCAL &heap_is_init
+	
+;init variables	
+	&heap_is_ok=1
+	&total_memory_size=&TOP_FOOT_SIZE
+	&total_used_chunk_number=0
+	&total_chunk_number=0
+	&total_used_large_chunk_number=0
+	&total_used_small_chunk_number=0
+	&total_free_large_chunk_number=0
+	&total_free_small_chunk_number=0
+	&total_used_memory_size=0
+	&total_need_memory_size=0
+	&total_waste_memory_size=0
+	&heap_manager_size=0
+	PRINT "Starting traverse:" V.STRING(s_mmi_heap[&heap_index].heap_name) ",Size:0x" V.VALUE((int)s_mmi_heap[&heap_index].heap_size)
+;get ms point parameter
+	PRINT " Idx    Address     State   ChunkSize NeedSize CodeLine  FileName"
+	&heap_ms_addr=V.Value((int)(s_mmi_heap_ms[&heap_index]))
+	&heap_ms_p="((mstate)&heap_ms_addr)"
+	
+;check if initialized
+	;IF (V.Value(&heap_ms_p->top)==0)
+	;{
+	;	PRINT V.Value(&heap_ms_p->top)
+	;	&heap_is_ok=0
+	;	RETURN &heap_is_ok
+	;}
+
+;add top pointer size
+	&total_memory_size=&total_memory_size+V.Value((int)(&heap_ms_p->topsize))
+;get peak value
+	&total_peak_memory_size=V.Value((int)(&heap_ms_p->peak_size))
+;get segment point
+	&seg_addr=V.Value((int)&(&heap_ms_p->seg))
+  &seg_p="((msegmentptr)&seg_addr)"	
+  WHILE	(&seg_addr!=0)
+  (
+  	GOSUB WalkSegment
+  	&seg_addr=0
+ 	  ;&seg_addr=V.Value((int)(&seg_p->next))
+  	;&seg_p="((msegmentptr)&seg_addr)"	
+  	;PRINT &seg_addr
+  )
+	
+  RETURN &heap_is_ok
+  
+
+WalkSegment:
+	LOCAL &in_use_bit
+	LOCAL &magic
+	LOCAL &fd
+	LOCAL &bk
+	LOCAL &result
+	&chunk_addr=V.Value((int)(&seg_p->base))
+	GOSUB AlignAsChunk
+	WHILE (&chunk_addr>=V.Value((int)(&seg_p->base))&&(&chunk_addr)<V.Value((int)(&seg_p->base+&seg_p->size))&&(&chunk_addr!=V.Value((int)&heap_ms_p->top)))
+	(
+		&total_chunk_number=&total_chunk_number+1
+		&chunk_head=V.Value((int)(&chunk_p->head))
+		&chunk_size=V.Value((int)(&chunk_p->head)&~(&FLAG_BITS))
+		&need_size=V.Value((int)(&chunk_p->needed_size))
+		&code_line=V.Value((int)(&chunk_p->code_line))
+		&file_name=V.STRING((&chunk_p->file_name))
+		&total_memory_size=&total_memory_size+&chunk_size
+		&total_need_memory_size=&total_need_memory_size+&need_size
+		&total_waste_memory_size=&total_waste_memory_size+V.VALUE((int)(&chunk_size-&need_size))
+		&in_use_bit=V.Value((int)((&chunk_p->head)&(&INUSE_BITS)))
+		&magic=V.Value((unsigned int)((&chunk_p->magic)))
+		IF (&in_use_bit!=&PINUSE_BIT)
+		(
+			;check magic
+			IF (&magic!=&MALLOC_MAGIC_NUMBER)
+			(
+				PRINT FORMAT.DECIMAL(4.,&total_chunk_number) ",  Ox" FORMAT.HEX(8.,&chunk_addr) ",  this chunk is broken,the previous chunk may be the bad guy"
+				RETURN
+			)
+			;print used chunk
+			IF (&total_chunk_number==1)
+			(
+				PRINT FORMAT.DECIMAL(4.,&total_chunk_number) ",  Ox" FORMAT.HEX(8.,&chunk_addr) ",  Used" FORMAT.DECIMAL(9.,&chunk_size) FORMAT.DECIMAL(9.,&need_size) FORMAT.DECIMAL(9.,&code_line) ",     Used by Heap Manager" 
+				&heap_manager_size=&chunk_size
+			)
+			ELSE
+				PRINT FORMAT.DECIMAL(4.,&total_chunk_number) ",  Ox" FORMAT.HEX(8.,&chunk_addr) ",  Used" FORMAT.DECIMAL(9.,&chunk_size) FORMAT.DECIMAL(9.,&need_size) FORMAT.DECIMAL(9.,&code_line) ",     " OS.FILE.NAME(&file_name)
+			
+			&total_used_memory_size=&total_used_memory_size+&chunk_size
+			IF (&chunk_size>0x100)
+			(
+				&total_used_large_chunk_number=&total_used_large_chunk_number+1
+			)
+			ELSE
+			(
+				&total_used_small_chunk_number=&total_used_small_chunk_number+1
+			)
+		)
+		ELSE
+		(
+			;check magic
+			IF (&magic!=&FREE_MAGIC_NUMBER)
+			(
+				PRINT FORMAT.DECIMAL(4.,&total_chunk_number) ",  Ox" FORMAT.HEX(8.,&chunk_addr) ",  this chunk is broken,the previous chunk may be the bad guy"
+				RETURN
+			)
+			;check free fd and bk
+			IF (&chunk_addr!=V.Value((int)&heap_ms_p->dv))
+			(
+				&fd=V.Value((int)((&chunk_p->fd)))
+				&bk=V.Value((int)((&chunk_p->bk)))
+	
+				GOSUB IsValidAddr &fd
+				ENTRY &result
+				IF (&result==0)
+				(
+					PRINT FORMAT.DECIMAL(4.,&total_chunk_number) ",  Ox" FORMAT.HEX(8.,&chunk_addr) ",  Free" FORMAT.DECIMAL(9.,&chunk_size) FORMAT.DECIMAL(9.,&need_size) FORMAT.DECIMAL(9.,&code_line) ",     " OS.FILE.NAME(&file_name)
+					PRINT "  this chunk is broken,it may be used as a wild pointer"
+					RETURN 
+				)
+			
+				GOSUB IsValidAddr &bk
+				ENTRY &result
+				IF (&result==0)
+				(
+					PRINT FORMAT.DECIMAL(4.,&total_chunk_number) ",  Ox" FORMAT.HEX(8.,&chunk_addr) ",  Free" FORMAT.DECIMAL(9.,&chunk_size) FORMAT.DECIMAL(9.,&need_size) FORMAT.DECIMAL(9.,&code_line) ",     " OS.FILE.NAME(&file_name)
+					PRINT "  this chunk is broken,it may be used as a wild pointer"
+					RETURN
+				)
+			)
+			IF (&chunk_size>0x100)
+			(
+				&total_free_large_chunk_number=&total_free_large_chunk_number+1
+			)
+			ELSE
+			(
+				&total_free_small_chunk_number=&total_free_small_chunk_number+1
+			)
+			;print free chunk
+			PRINT FORMAT.DECIMAL(4.,&total_chunk_number) ",  Ox" FORMAT.HEX(8.,&chunk_addr) ",  Free" FORMAT.DECIMAL(9.,&chunk_size)
+		) 
+	  ;get next chunk
+	  &chunk_addr=&chunk_addr+&chunk_size
+	  &chunk_p="((mchunkptr)&chunk_addr)"
+
+	)
+	IF (&chunk_addr==V.Value((int)&heap_ms_p->top))
+	(
+		&chunk_size=V.Value((int)(&chunk_p->head)&~(&FLAG_BITS))
+	  IF (&chunk_size>0x100)
+		(
+			&total_free_large_chunk_number=&total_free_large_chunk_number+1
+		)
+		ELSE
+		(
+			&total_free_small_chunk_number=&total_free_small_chunk_number+1
+		)
+		&total_chunk_number=&total_chunk_number+1
+		
+		PRINT FORMAT.DECIMAL(4.,&total_chunk_number) ",  Ox" FORMAT.HEX(8.,&chunk_addr) ",  Free" FORMAT.DECIMAL(9.,&chunk_size) ", Top Chunk"
+	)
+	PRINT "------------------------Summary----------------------------------------"
+  PRINT "Total dl heap size:           " FORMAT.DECIMAL(10.,&total_memory_size)
+  PRINT "Total chunk number:           " FORMAT.DECIMAL(10.,&total_chunk_number)
+  PRINT "Total used small chunk number:" FORMAT.DECIMAL(10.,&total_used_small_chunk_number)
+  PRINT "Total used large chunk number:" FORMAT.DECIMAL(10.,&total_used_large_chunk_number)
+  PRINT "Total free small chunk number:" FORMAT.DECIMAL(10.,&total_free_small_chunk_number)
+  PRINT "Total free large chunk number:" FORMAT.DECIMAL(10.,&total_free_large_chunk_number)
+  PRINT "Total used size:              " FORMAT.DECIMAL(10.,&total_used_memory_size)
+  PRINT "Heap manager size:            " FORMAT.DECIMAL(10.,&heap_manager_size)
+  PRINT "Total needed size:            " FORMAT.DECIMAL(10.,&total_need_memory_size-&heap_manager_size)
+  PRINT "Total wasted size:            " FORMAT.DECIMAL(10.,&total_waste_memory_size)
+  PRINT "Total peak size:              " FORMAT.DECIMAL(10.,&total_peak_memory_size)
+	RETURN
+
+;-------------------------------------------------------------------------------
+; calculate mem_addr from chunk_addr
+; align mem_addr to CHUNK_ALIGN_MASK
+; back convert mem_addr to chunk_addr
+; set chunk_p
+;-------------------------------------------------------------------------------
+AlignAsChunk:
+	LOCAL &offset
+	LOCAL &temp
+	&mem_addr=&chunk_addr+&CHUNK_OVERHEAD
+	IF (&mem_addr&CHUNK_ALIGN_MASK==0)
+	(
+		&offset=0
+	)
+	ELSE
+	(
+		&temp=V.VALUE((int)(&MALLOC_ALIGNMENT-(&mem_addr&(&CHUNK_ALIGN_MASK))))
+		&offset=V.VALUE((int)(&temp&(&CHUNK_ALIGN_MASK)))
+	)
+	&chunk_addr=&chunk_addr+&offset
+	&chunk_p="((mchunkptr)&chunk_addr)"
+	RETURN
+
+;-------------------------------------------------------------------------------
+; check mem_addr if it is a valid address,use seg_p as global value
+; parameter: addr
+; return :   bool
+;-------------------------------------------------------------------------------
+IsValidAddr:
+	LOCAL &test_addr
+	ENTRY &test_addr
+	IF (&test_addr>=V.Value((int)(&seg_p->base))&&(&test_addr)<V.Value((int)(&seg_p->base+&seg_p->size)))
+	(
+		RETURN 1
+	)
+  ELSE
+  (
+		RETURN 0
+	)
